@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 出海与政策红利服务方案｜制造业中小企业</title>
+<style>
+:root{
+  --ink:#111418;--sub:#5b6472;--line:#e3e7ed;--bg:#f6f7f9;--card:#fff;
+  --brand:#1548b8;--brand-d:#0d3487;--brand-s:#eef3ff;
+  --up:#b8531c;--up-s:#fff3ec;
+  --good:#0d7a6f;--good-s:#eafaf7;
+  --gold:#96650a;--gold-s:#fdf8e6;
+  --red:#b3261e;--red-s:#fdf1f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.78;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;background:var(--card);
+  box-shadow:0 1px 3px rgba(16,24,40,.05),0 12px 40px rgba(16,24,40,.06)}
+
+/* 封面 */
+.cover{background:linear-gradient(135deg,#1548b8,#0d3487);color:#fff;padding:54px 58px 46px;position:relative;overflow:hidden}
+.cover:before{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;
+  border-radius:50%;background:rgba(255,255,255,.05)}
+.cover:after{content:"";position:absolute;right:40px;bottom:-130px;width:250px;height:250px;
+  border-radius:50%;background:rgba(255,255,255,.04)}
+.cover .kicker{font-size:12.5px;letter-spacing:3px;opacity:.82;margin-bottom:14px;font-weight:600}
+.cover h1{font-size:33px;font-weight:700;line-height:1.4;letter-spacing:-.4px;margin-bottom:16px;max-width:760px}
+.cover .sub{font-size:16px;opacity:.94;max-width:700px;line-height:1.8}
+.cover .facts{display:flex;gap:38px;margin-top:32px;padding-top:26px;border-top:1px solid rgba(255,255,255,.2);flex-wrap:wrap}
+.cover .facts div b{display:block;font-size:24px;font-weight:700;letter-spacing:-.5px;margin-bottom:2px}
+.cover .facts div span{font-size:12.5px;opacity:.85}
+
+section{padding:44px 58px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+.s-num{font-size:11.5px;font-weight:700;color:var(--brand);letter-spacing:2px;margin-bottom:6px}
+h2{font-size:23px;font-weight:700;letter-spacing:-.2px;margin-bottom:8px;line-height:1.45}
+.s-lead{color:var(--sub);font-size:14.5px;margin-bottom:26px;max-width:840px}
+h3{font-size:16px;font-weight:700;margin:26px 0 10px}
+
+/* 痛点 */
+.pain{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.pain .p{border:1px solid var(--line);border-radius:12px;padding:20px 21px;background:#fcfcfd}
+.pain .p .no{font-size:11px;font-weight:700;color:var(--red);letter-spacing:1px;margin-bottom:7px}
+.pain .p h4{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.5}
+.pain .p p{font-size:13.5px;color:var(--sub);line-height:1.75}
+.pain .p .data{margin-top:12px;padding-top:11px;border-top:1px dashed var(--line);
+  font-size:12.5px;color:var(--up);font-weight:600}
+
+/* 三层 */
+.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.layer{border-radius:13px;padding:22px 23px;border:1px solid var(--line)}
+.layer.l1{background:#f8fafd}
+.layer.l2{background:#fdf9f6}
+.layer.l3{background:var(--good-s);border-color:#c5e9e3}
+.layer .t{font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.layer.l1 .t{color:var(--brand)} .layer.l2 .t{color:var(--up)} .layer.l3 .t{color:var(--good)}
+.layer h4{font-size:16px;font-weight:700;margin-bottom:11px}
+.layer ul{margin-left:17px;font-size:13.5px;color:#3d4552;line-height:1.8}
+.layer li{margin-bottom:5px}
+
+/* 行业 Tab */
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:24px;border-bottom:2px solid var(--line);padding-bottom:0}
+.tab{padding:10px 17px;font-size:14px;font-weight:600;color:var(--sub);cursor:pointer;
+  border:none;background:none;border-radius:9px 9px 0 0;transition:.16s;position:relative;top:2px}
+.tab:hover{color:var(--brand);background:var(--brand-s)}
+.tab.on{color:var(--brand);background:var(--brand-s);border-bottom:3px solid var(--brand);padding-bottom:8px}
+.pane{display:none}
+.pane.on{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.ihd{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;
+  background:var(--brand-s);border-radius:11px;padding:18px 22px;margin-bottom:20px;flex-wrap:wrap}
+.ihd h3{margin:0 0 4px;font-size:17px}
+.ihd .who{font-size:13px;color:var(--sub)}
+.ihd .price{font-size:14px;font-weight:700;color:var(--brand);white-space:nowrap;text-align:right}
+.ihd .price span{display:block;font-size:11.5px;font-weight:500;color:var(--sub);margin-top:2px}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 4px}
+th{background:#f2f4f7;text-align:left;padding:11px 13px;font-weight:600;font-size:12.5px;
+  color:#374151;border-bottom:1px solid var(--line)}
+td{padding:11px 13px;border-bottom:1px solid #eef1f4;vertical-align:top;line-height:1.7}
+tr:last-child td{border-bottom:none}
+td.k{font-weight:600;white-space:nowrap;width:118px;color:#263041}
+td.p{white-space:nowrap;font-weight:600;width:112px}
+tr.alt{background:#fbfcfd}
+
+/* 套餐 */
+.pk{border:1px solid var(--line);border-radius:13px;padding:22px 23px;background:#fff;position:relative}
+.pk.hot{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-s)}
+.pk .badge{position:absolute;top:-11px;right:19px;background:var(--brand);color:#fff;
+  font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;letter-spacing:.5px}
+.pk .nm{font-size:16px;font-weight:700;margin-bottom:3px}
+.pk .for{font-size:12.5px;color:var(--sub);margin-bottom:15px;min-height:38px}
+.pk .amt{font-size:26px;font-weight:700;color:var(--brand);letter-spacing:-.8px;margin-bottom:2px}
+.pk .amt small{font-size:13px;font-weight:500;color:var(--sub);letter-spacing:0}
+.pk ul{margin:16px 0 0 17px;font-size:13px;color:#3d4552;line-height:1.85}
+.pkg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+/* 路线图 */
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:8px}
+.road .r{padding:0 18px;border-left:1px solid var(--line);position:relative}
+.road .r:first-child{border-left:none;padding-left:0}
+.road .r:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;
+  border-radius:50%;background:var(--brand)}
+.road .r:first-child:before{display:none}
+.road .m{font-size:12px;font-weight:700;color:var(--brand);letter-spacing:.5px;margin-bottom:5px}
+.road h4{font-size:14.5px;font-weight:700;margin-bottom:7px;line-height:1.5}
+.road p{font-size:13px;color:var(--sub);line-height:1.75}
+.road .del{margin-top:9px;font-size:12px;color:var(--up);font-weight:600}
+
+/* 保障 */
+.guar{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.guar .g{border:1px solid #c5e9e3;background:var(--good-s);border-radius:11px;padding:18px 20px}
+.guar .g .ic{font-size:17px;margin-bottom:6px}
+.guar .g h4{font-size:14.5px;font-weight:700;margin-bottom:6px;color:#0a5f56}
+.guar .g p{font-size:13px;color:#2c4f4b;line-height:1.75}
+
+/* 强调块 */
+.hl{background:var(--gold-s);border-left:3px solid var(--gold);border-radius:0 9px 9px 0;
+  padding:16px 20px;margin:20px 0;font-size:13.5px;color:#5c4508;line-height:1.8}
+.hl b{color:#5c4508}
+.warn{background:var(--red-s);border-left:3px solid var(--red);border-radius:0 9px 9px 0;
+  padding:16px 20px;margin:20px 0;font-size:13.5px;color:#7a2019;line-height:1.8}
+.warn b{color:var(--red)}
+
+/* 底部CTA */
+.cta{background:linear-gradient(135deg,#1548b8,#0d3487);color:#fff;padding:44px 58px}
+.cta h2{color:#fff;margin-bottom:10px}
+.cta .lead{color:rgba(255,255,255,.9);font-size:14.5px;margin-bottom:24px;max-width:760px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:26px}
+.steps .s{background:rgba(255,255,255,.1);border-radius:11px;padding:19px 21px}
+.steps .s .n{font-size:12px;font-weight:700;letter-spacing:1.5px;opacity:.8;margin-bottom:7px}
+.steps .s h4{color:#fff;font-size:15px;font-weight:700;margin-bottom:6px}
+.steps .s p{font-size:13px;opacity:.88;line-height:1.72}
+.cta .final{display:flex;gap:36px;flex-wrap:wrap;padding-top:24px;border-top:1px solid rgba(255,255,255,.2)}
+.cta .final div b{display:block;font-size:22px;font-weight:700;margin-bottom:2px}
+.cta .final div span{font-size:12.5px;opacity:.85}
+
+footer{padding:26px 58px 34px;font-size:12px;color:var(--sub);line-height:1.85;background:#fbfcfd}
+.faq{margin-top:4px}
+.faq details{border-bottom:1px solid var(--line);padding:13px 0}
+.faq details:last-child{border-bottom:none}
+.faq summary{font-size:14px;font-weight:600;cursor:pointer;list-style:none;padding-left:18px;position:relative;color:#263041}
+.faq summary:before{content:"+";position:absolute;left:0;color:var(--brand);font-weight:700;font-size:17px;top:-1px}
+.faq details[open] summary:before{content:"−"}
+.faq .ans{font-size:13.5px;color:var(--sub);margin-top:8px;padding-left:18px;line-height:1.8}
+
+@media(max-width:900px){
+  .cover,section,.cta,footer{padding-left:26px;padding-right:26px}
+  .pain,.stack,.pkg,.steps,.road,.guar{grid-template-columns:1fr}
+  .road .r{border-left:none;border-top:1px solid var(--line);padding:16px 0 0}
+  .road .r:first-child{border-top:none}
+}
+@media print{
+  body{background:#fff}.tabs{display:none}.pane{display:block!important;page-break-before:always}
+  .pane:first-of-type{page-break-before:auto}
+  .wrap{box-shadow:none}.cta{background:#1548b8!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- 封面 -->
+<div class="cover">
+  <div class="kicker">AI 出海 · 政策红利 · 企业服务方案</div>
+  <h1>让海外买家在搜索 AI 的时候<br>第一个找到你，让政策资金该拿的一次不落</h1>
+  <p class="sub">专为制造业中小企业打造的一体化服务方案——从海外获客、独立站运营，到高新技术企业认定、专精特新培育、数字化转型奖补申报，一次对接，一份长期台账。</p>
+  <div class="facts">
+    <div><b>7 大产业带</b><span>汽配·服装·家具·卫浴·橱柜·珠宝·非遗</span></div>
+    <div><b>50–500 万</b><span>数字化转型单项奖补上限</span></div>
+    <div><b>25%–15%</b><span>企业所得税率：原值 → 认定后</span></div>
+    <div><b>3 个月</b><span>首批可交付成果</span></div>
+  </div>
+</div>
+
+<!-- 01 你现在的问题 -->
+<section>
+  <div class="s-num">01 / 我们看到的问题</div>
+  <h2>很多珠三角的工厂，陷入同一个循环</h2>
+  <p class="s-lead">不是不努力，是努力的顺序反了——先花钱建站，再想客户从哪来；先追热点平台，再谈内容质量；政策红利知道有，却总是"明年再说"。</p>
+
+  <div class="pain">
+    <div class="p">
+      <div class="no">问题一 · 流量</div>
+      <h4>钱花了，客户不精准</h4>
+      <p>B2B 平台单条有效询盘成本约 1,400–4,000 元，询盘数量和成交质量严重脱节。展会名片躺在抽屉里，业务员一走客户就跟着走。</p>
+      <div class="data">行业均值：独立站询盘率仅 1–3%</div>
+    </div>
+    <div class="p">
+      <div class="no">问题二 · 内容</div>
+      <h4>产品再好，海外客户看不懂</h4>
+      <p>中文直接机翻成英文，规格参数、单位、公差、适配型号全部错位。买手看完留下疑问就走了，转化率上不去。</p>
+      <div class="data">家居/家具类因多语言体验差导致弃购率高达 47%</div>
+    </div>
+    <div class="p">
+      <div class="no">问题三 · 政策</div>
+      <h4>该拿的钱，一次没拿够</h4>
+      <p>高新技术企业、专精特新、科技型中小企业入库、数字化转型奖补……企业不知道自己能拿多少、什么时候截止、材料怎么准备，只能等代办机构上门。</p>
+      <div class="data">广州数字化转型奖补：按投入 50%，最高 500 万</div>
+    </div>
+  </div>
+
+  <div class="hl">
+    <b>还有一个变化正在发生：</b>越来越多海外采购不再先搜索关键词，而是直接问 AI——"推荐几个靠谱的中国汽配供应商"。品牌不在 AI 的答案里，等于在客户的采购清单上"查无此人"。这项能力叫 <b>GEO（生成式引擎优化）</b>，2026 年已成为外贸企业的新标配。
+  </div>
+</section>
+
+<!-- 02 三层服务 -->
+<section>
+  <div class="s-num">02 / 我们做什么</div>
+  <h2>三层服务，从地基到现金流，逐层搭建</h2>
+  <p class="s-lead">不是把所有服务打包卖给你，而是让你按现在的阶段选——先解决最卡的那一层，其余可随时加。</p>
+
+  <div class="stack">
+    <div class="layer l1">
+      <div class="t">第一层 · 数字基建</div>
+      <h4>让海外客户有地方看你</h4>
+      <ul>
+        <li>多语言企业独立站 / 品牌站</li>
+        <li>产品数据结构化与展示优化</li>
+        <li>域名、企业邮箱、SSL、全球加速</li>
+        <li>合规认证展示页（CE / EN / SGS / OEKO-TEX）</li>
+        <li>多币种、本地支付、运费估算</li>
+      </ul>
+    </div>
+    <div class="layer l2">
+      <div class="t">第二层 · 获客引擎</div>
+      <h4>让客户主动找到你</h4>
+      <ul>
+        <li>GEO：让 AI 在采购问答中推荐你</li>
+        <li>Google SEO / 广告投放与优化</li>
+        <li>社媒矩阵内容与自动发布</li>
+        <li>AI 内容工厂：产品图、场景图、短视频</li>
+        <li>AI 精准询盘挖掘与外贸业务员</li>
+        <li>海外展会数字营销与线索追踪</li>
+      </ul>
+    </div>
+    <div class="layer l3">
+      <div class="t">第三层 · 政策红利</div>
+      <h4>让政府该给你的钱到账</h4>
+      <ul>
+        <li>政策雷达：你能拿哪些、缺什么、何时截止</li>
+        <li>科技型中小企业入库（研发加计扣除 100%）</li>
+        <li>高新技术企业认定（税率 25% → 15%）</li>
+        <li>专精特新中小企业 /「小巨人」培育</li>
+        <li>数字化转型奖补申报（50%，最高 500 万）</li>
+        <li>研发费用归集、加计扣除常年顾问</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 03 行业方案 -->
+<section>
+  <div class="s-num">03 / 行业专属方案</div>
+  <h2>不同行业的生意逻辑，交付方式完全不同</h2>
+  <p class="s-lead">请选择您所在的行业，查看对应的服务内容与报价。<span style="color:var(--sub)">（打印本方案时会自动展开全部行业）</span></p>
+
+  <div class="tabs">
+    <button class="tab on" onclick="sw(0,this)">汽配</button>
+    <button class="tab" onclick="sw(1,this)">家具 / 橱柜</button>
+    <button class="tab" onclick="sw(2,this)">卫浴</button>
+    <button class="tab" onclick="sw(3,this)">珠宝首饰</button>
+    <button class="tab" onclick="sw(4,this)">服装</button>
+    <button class="tab" onclick="sw(5,this)">非遗文创</button>
+  </div>
+
+  <!-- 汽配 -->
+  <div class="pane on">
+    <div class="ihd">
+      <div><h3>汽车配件 / 后市场供应链</h3><div class="who">适合：OE 号配套件、覆盖件、易损件出口商，年出口额 300 万以上</div></div>
+      <div class="price">启航包 68,800 元/年起<span>按出口市场系数调整</span></div>
+    </div>
+    <table>
+      <tr><td class="k">您的核心痛点</td><td>海外买家发来一句"有没有适配 LC200 的前刹车片"，要人工翻适配表、核对件号、再算一遍价格——一轮往返半天，订单就凉了。</td></tr>
+      <tr class="alt"><td class="k">我们做什么</td><td>建立 <b>OE 号 + 车型 + 发动机型号 + 年款</b> 的四维适配数据库，把适配表做成可查询的在线工具；接入 AI 报价引擎，客户询价进来 5 秒出价，适配不符自动提示。</td></tr>
+      <tr><td class="k">关键交付物</td><td>适配车型查询页 · 自动报价器 · 通用号/品牌号对照表 · 安装演示短视频库 · WhatsApp 自动应答与跟进</td></tr>
+      <tr class="alt"><td class="k">合规要点</td><td>ISO / TS 体系认证展示页；出口美国需符合 UFLPA 溯源要求（供应链可追溯声明）；产品责任险提示文件</td></tr>
+      <tr><td class="k">主攻市场</td><td>中东 GCC（客单价高、决策快）· 非洲（量大、复购强）· 东南亚（摩托车配件刚需）</td></tr>
+      <tr class="alt"><td class="k">报价系数</td><td class="p">×0.8</td><td style="border:none">B2B 逻辑为主、复购频次高，是长期现金流最稳的一类，因此服务单价相对低</td></tr>
+      <tr><td class="k">政策适配</td><td>高新技术企业认定、科技型中小企业入库、专精特新培育、数字化转型奖补（若具备生产制造环节）</td></tr>
+    </table>
+  </div>
+
+  <!-- 家具橱柜 -->
+  <div class="pane">
+    <div class="ihd">
+      <div><h3>家具 / 橱柜 / 定制家居</h3><div class="who">适合：软体家具、橱柜、衣柜、全屋定制出口商与跨境品牌</div></div>
+      <div class="price">品牌包 128,000 元/年起<span>大件售后成本需单独核算</span></div>
+    </div>
+    <table>
+      <tr><td class="k">您的核心痛点</td><td>退货率高达 40%+，大件破损与安装纠纷吃掉大部分利润；场景图每款拍摄 800–1,500 元、SKU 一多就做不动；定制选项多，客户下单前反复问、成交周期长。</td></tr>
+      <tr class="alt"><td class="k">我们做什么</td><td>搭建 <b>尺寸 + 材质 + 五金 + 定制选项</b> 的配置报价器，客户自己勾选就出价；用 AI 生成场景图 + 实拍结合，把拍摄成本压到 30–80 元/张；建立破损率与退货原因的追踪机制，反向优化产品描述与包装。</td></tr>
+      <tr class="alt"><td class="k">关键交付物</td><td>配置报价器 · 场景素材库（AI + 实拍） · 尺寸/物流页（规避跳单） · 安装说明与视频 · 售后政策本地化页面</td></tr>
+      <tr><td class="k">合规要点</td><td>欧盟 <b>EN 1727 / EN 12520</b> 家具安全声明；美国 CPSIA 认证说明页；德国需 SOFORT 支付 + 欧元标价（3 秒内看不到语言切换和本地货币，58% 用户会直接关闭）</td></tr>
+      <tr class="alt"><td class="k">主攻市场</td><td>欧美（复购率超 32%，客单约 $186）· 中东（高端酒店软装）——<b>建议规避退货率超 40% 的区域</b></td></tr>
+      <tr><td class="k">报价系数</td><td class="p">×1.3</td><td style="border:none">大件售后与物流成本重，服务投入显著高于标品</td></tr>
+      <tr class="alt"><td class="k">政策适配</td><td>佛山/广州数字化转型奖补契合度高（佛山二级/三级最高 50 万、四级最高 70 万，按投入 30%）</td></tr>
+    </table>
+  </div>
+
+  <!-- 卫浴 -->
+  <div class="pane">
+    <div class="ihd">
+      <div><h3>卫浴 / 陶瓷 / 建材</h3><div class="who">适合：浴室柜、龙头、洁具、淋浴房、瓷砖建材出口商</div></div>
+      <div class="price">启航包 68,800 元/年起<span>长尾词流量价值高</span></div>
+    </div>
+    <table>
+      <tr><td class="k">您的核心痛点</td><td>参数太专业（水效等级、安装方式、坑距、承重），海外买家看不懂就直接走；产品同质化严重，只能靠价格拼；长尾搜索流量巨大但没人做。</td></tr>
+      <tr class="alt"><td class="k">我们做什么</td><td>把技术参数翻译成买家语言并结构化展示；做 <b>"industrial faucet" 这类长尾词的 GEO 与 SEO 布局</b>——有厦门卫浴品牌靠结构化数据让产品页点击率提升 215%，长尾词自然流量月增 1.2 万次；建立规格选型助手，降低咨询往返。</td></tr>
+      <tr><td class="k">关键交付物</td><td>规格选型助手 · 长尾关键词矩阵与内容 · 安装示意视频 · 材质与检测报告展示页 · 经销/工程采购通道</td></tr>
+      <tr class="alt"><td class="k">合规要点</td><td>CE 认证、饮用水卫生标准（如适用）、防臭/防漏性能说明；瓷砖类注意 UFLPA 与包装标识</td></tr>
+      <tr><td class="k">主攻市场</td><td>中东 · 非洲 · 东南亚（南安/晋江产业带配套成熟）</td></tr>
+      <tr class="alt"><td class="k">报价系数</td><td class="p">×1.0</td><td style="border:none">标准工业品，交付难度中等</td></tr>
+      <tr><td class="k">政策适配</td><td>专精特新培育适配度高；数字化转型奖补可覆盖生产设备与系统投入</td></tr>
+    </table>
+  </div>
+
+  <!-- 珠宝 -->
+  <div class="pane">
+    <div class="ihd">
+      <div><h3>珠宝首饰 / 贵金属饰品</h3><div class="who">适合：925 银饰品、彩宝、珍珠、和田玉、工艺首饰品牌与工厂</div></div>
+      <div class="price">品牌包 168,000 元/年起<span>溢价空间最高</span></div>
+    </div>
+    <table>
+      <tr><td class="k">您的核心痛点</td><td>买首饰最大的障碍不是价格，是<b>信任缺失</b>——材质造假、实物与图片不符、退换麻烦。TikTok Shop 上头部银饰品牌退货率突破 34%，主因就是尺寸误判与材质描述偏差。</td></tr>
+      <tr class="alt"><td class="k">我们做什么</td><td>首页三秒内建立<b>三重信任信号</b>：第三方检测认证徽章 → 显微镜级材质特写 + 尺码实测视频 → 免刻字/环保礼盒等增值选项；接入 Klarna、Afterpay 分期化解大额决策门槛；把一件产品的视觉资产复用到全渠道，降低获客成本。</td></tr>
+      <tr><td class="k">关键交付物</td><td>材质溯源页 · 检测证书展示 · 尺寸实测内容 · 佩戴场景内容库 · 用户评价墙 · 分期支付配置</td></tr>
+      <tr class="alt"><td class="k">合规要点</td><td>SGS 等第三方检测报告；贵金属需符合当地贵金属标记法规；防敏材质说明；跨境申报与税务合规</td></tr>
+      <tr><td class="k">主攻市场</td><td><b>欧美</b>（独立站珠宝类平均客单约 $287，是平台同类 1.6 倍）；Pinterest 对珠宝类视觉内容权重持续走高，是有效冷启动入口</td></tr>
+      <tr class="alt"><td class="k">报价系数</td><td class="p">×1.5</td><td style="border:none">卖的是信任与故事，内容与信任构建成本最高，溢价也最高</td></tr>
+      <tr><td class="k">政策适配</td><td>番禺/水贝珠宝产业带配套完善；高新技术企业、专精特新认定可结合设计研发投入申报</td></tr>
+    </table>
+  </div>
+
+  <!-- 服装 -->
+  <div class="pane">
+    <div class="ihd">
+      <div><h3>服装 / 纺织成衣</h3><div class="who">适合：服装外贸工厂、跨境 B2C 品牌、OEM/ODM 客户</div></div>
+      <div class="price">品牌包 128,000 元/年起<span>SKU 深度影响报价</span></div>
+    </div>
+    <table>
+      <tr><td class="k">您的核心痛点</td><td>退货率普遍 30%+，尺码是主因；SKU 数量爆炸导致上新、内容、翻译全部做不过来；开发周期长，一旦压错款就是灾难。</td></tr>
+      <tr class="alt"><td class="k">我们做什么</td><td>建立 <b>尺码 + 面料 + 工艺</b> 的核价与推荐引擎，控制毛利底线；AI 生成尺码表与真人上身内容，解决"买手不敢下单"；用内容流水线把上新周期从周级压到天级；构建小单快反的选品与测款流程，降低压货风险。</td></tr>
+      <tr><td class="k">关键交付物</td><td>尺码建议工具 · SKU 核价系统 · 上新内容流水线 · 面料与洗护说明页 · 达人内容包</td></tr>
+      <tr class="alt"><td class="k">合规要点</td><td><b>OEKO-TEX Standard 100</b>（禁止重金属、有害染料超标）——欧盟市场强制；纤维成分标注；出口美国需符合 UFLPA 溯源</td></tr>
+      <tr><td class="k">主攻市场</td><td>欧美 · 中东 · 东南亚（RCEP 原产地证可享 0 关税，适合大批量批发与商超渠道）</td></tr>
+      <tr class="alt"><td class="k">报价系数</td><td class="p">×1.0</td><td style="border:none">内容生产量最大，但单位内容价值低于珠宝/非遗</td></tr>
+      <tr><td class="k">政策适配</td><td>高新技术企业、专精特新培育；出口退税 13%</td></tr>
+    </table>
+  </div>
+
+  <!-- 非遗 -->
+  <div class="pane">
+    <div class="ihd">
+      <div><h3>非遗 / 传统手工艺文创</h3><div class="who">适合：苏绣、香云纱、漆器、陶瓷、竹编、苗银、文房四宝等</div></div>
+      <div class="price">品牌包 168,000 元/年起<span>内容投入最重</span></div>
+    </div>
+    <table>
+      <tr><td class="k">您的核心痛点</td><td>工艺价值被"文化贴纸"掩盖，深度工艺退化成表面符号，卖不出溢价；缺少能支撑高价的价值语言；物流破损率高（礼盒+防震填充使单件包装成本增加 15–30 元）；文化差异可能引发误解甚至差评。</td></tr>
+      <tr class="alt"><td class="k">我们做什么</td><td>用 <b>「慢叙事」</b>重构叙事——把匠人完整工时按当地合理日薪折算成基础工时成本，再叠加文化资产附加值，形成可解释的溢价系数；同时呈现工艺对自然条件的依赖（如香云纱"三蒸九煮十八晒"），把不可复制性讲成稀缺性。</td></tr>
+      <tr><td class="k">关键交付物</td><td>工艺叙事站 · 工时溢价测算模型 · 匠人故事内容 · 传承关系证明与涉外公证代办 · 防震包装方案 · 文化差异审核说明</td></tr>
+      <tr class="alt"><td class="k">合规要点</td><td><b>传承人授权协议 + 涉外公证</b>（用于平台备案）；宗教仪式用品不得作装饰画销售（唐卡等）；"寿"字纹等在英语语境可能关联葬礼，需文化解读文案或图案微创新；红木、紫檀等<b>濒危木材须办 CITES 出口许可证</b>；欧盟 OEKO-TEX</td></tr>
+      <tr><td class="k">主攻市场</td><td>欧盟（占 28.5%，愿为手工限量款付 3–10 倍溢价）· 美国（22.1%，Etsy 与独立站需求旺）· 东南亚（增速最快，年均 15%+，RCEP 零关税）</td></tr>
+      <tr class="alt"><td class="k">报价系数</td><td class="p">×1.4</td><td style="border:none">2025 年非遗类出口 482.3 亿美元（+5.2%），出口利润率 12–25%，退税 13%——高利润赛道</td></tr>
+      <tr><td class="k">政策适配</td><td>文旅类专项、文化产品出口扶持、专精特新培育（若已公司化运营）</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 04 套餐报价 -->
+<section>
+  <div class="s-num">04 / 报价</div>
+  <h2>三档套餐，按你现在的阶段选</h2>
+  <p class="s-lead">所有费用一次性写进合同，中途不加价。第三方费用（检测、审计、官费）实报实销，我们不加价、不赚差价。</p>
+
+  <div class="pkg">
+    <div class="pk">
+      <div class="nm">行业诊断包</div>
+      <div class="for">首次合作前，先看清自己站在哪、缺什么、能拿到多少政策</div>
+      <div class="amt">2,980<small> 元起 / 次</small></div>
+      <ul>
+        <li>《出海可行性诊断报告》</li>
+        <li>《政策红利地图》（能拿哪些、缺什么、何时截止）</li>
+        <li>同业出海标杆对标分析</li>
+        <li>90 天可执行动作清单</li>
+        <li><b>可全额抵扣后续服务费</b></li>
+      </ul>
+    </div>
+    <div class="pk hot">
+      <div class="badge">最多企业选择</div>
+      <div class="nm">出海启航包</div>
+      <div class="for">适合有出口额、想先把基础打通的 B2B 制造企业</div>
+      <div class="amt">68,800<small> 元 / 年起</small></div>
+      <ul>
+        <li>多语言独立站建设（首年）</li>
+        <li>行业模板包（数据结构+关键词库）</li>
+        <li>AI 产品素材工厂（月度更新）</li>
+        <li>社媒矩阵运营（2 平台）</li>
+        <li>GEO 优化（让 AI 推荐你）</li>
+        <li>AI 外贸业务员（1 坐席）</li>
+        <li>合规文档与展示页</li>
+      </ul>
+    </div>
+    <div class="pk">
+      <div class="nm">品牌出海包</div>
+      <div class="for">适合高客单价、重信任的 B2C 品类（珠宝、家具、非遗）</div>
+      <div class="amt">128,000<small> 元 / 年起</small></div>
+      <ul>
+        <li>品牌定制站（全套多语言）</li>
+        <li>行业模板包 + 信任体系搭建</li>
+        <li>强化内容工厂（工艺/场景/真人）</li>
+        <li>社媒矩阵（3 平台）</li>
+        <li>GEO 优化 + 渠道投放</li>
+        <li>AI 客服 + 询盘留资体系</li>
+        <li>合规认证代办对接</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>可以单独购买的服务</h3>
+  <table>
+    <tr><td class="k">AI 精准询盘挖掘</td><td class="p">按有效询盘计费</td><td>200–1,200 元/条，7 项标准验证，不合格不计费</td></tr>
+    <tr class="alt"><td class="k">GEO 生成式引擎优化</td><td class="p">6,800 元/月起</td><td>标准版 6,800 / 多市场 19,800 / 企业版 30,000+</td></tr>
+    <tr><td class="k">行业数据结构引擎</td><td class="p">18,000–35,000 元</td><td>配置器 / 自动报价器，一次搭建 + 4,800–8,000 元/年维护</td></tr>
+    <tr class="alt"><td class="k">合规认证代办对接</td><td class="p">3,800–15,000 元</td><td>CE / EN / SGS / OEKO-TEX / 非遗涉外公证（第三方检测费实报实销）</td></tr>
+    <tr><td class="k">高新技术企业认定辅导</td><td class="p">3–8 万元</td><td>含前期条件评估、材料撰写、专项审计对接；<b>不通过全额退款</b></td></tr>
+    <tr class="alt"><td class="k">专精特新 / 小巨人培育</td><td class="p">1–15 万元</td><td>专精特新中小企业 1–3 万 /「小巨人」5–15 万；<b>先评估后签约</b></td></tr>
+    <tr><td class="k">数字化转型奖补申报</td><td class="p">按核定投入 8–12%</td><td>协助申报政府 30%–50% 奖补（最高 500 万），并可承接实施部分</td></tr>
+    <tr class="alt"><td class="k">研发费用加计扣除顾问</td><td class="p">1–3 万元/年</td><td>研发辅助账建立、归集口径梳理、鉴证辅导</td></tr>
+    <tr><td class="k">海外展会数字营销</td><td class="p">5 万元/场起</td><td>展前预热投放 + 展中直播互动 + 展后线索追踪与 CRM 对接</td></tr>
+  </table>
+
+  <div class="hl">
+    <b>为什么我们的报价不含"抽成"：</b>有机构按补贴到账金额抽 10–20%，看似客户省事，实际已被多地监管部门明确定性为违规，机构涉骗补一律移送公安机关。我们只在政府<b>明文规定用于支持数字化服务供给</b>的部分收取服务费，其余全部采用固定服务费模式。所有服务内容写进合同，第三方费用提供官方缴费凭证、不赚差价。
+  </div>
+</section>
+
+<!-- 05 90天路线 -->
+<section>
+  <div class="s-num">05 / 交付节奏</div>
+  <h2>90 天，我们分四步走完</h2>
+  <p class="s-lead">每个阶段都有可核验的交付物，您随时能看到钱花在哪、进展到哪一步。</p>
+
+  <div class="road">
+    <div class="r">
+      <div class="m">第 1–2 周</div>
+      <h4>诊断与基线</h4>
+      <p>行业特性诊断、产品数据结构梳理、竞品对标、政策红利盘点、现有资产盘点（域名/账号/数据）。</p>
+      <div class="del">交付：诊断报告 + 政策红利地图 + 90 天动作清单</div>
+    </div>
+    <div class="r">
+      <div class="m">第 3–6 周</div>
+      <h4>基建搭建</h4>
+      <p>独立站或品牌站搭建、多语言与本地货币配置、产品数据结构化上线、合规展示页就位、素材库首批产出。</p>
+      <div class="del">交付：可访问站点 + 产品数据库 + 素材库</div>
+    </div>
+    <div class="r">
+      <div class="m">第 7–10 周</div>
+      <h4>内容与渠道上线</h4>
+      <p>社媒矩阵开通与内容排期、Google 账户搭建、GEO 知识库建设、AI 业务员上线并接入询盘入口。</p>
+      <div class="del">交付：渠道矩阵 + GEO 部署 + AI 客服可用</div>
+    </div>
+    <div class="r">
+      <div class="m">第 11–13 周</div>
+      <h4>放量与复盘</h4>
+      <p>广告投放测试与优化、询盘质量校准、政策申报材料提交、月度数据复盘与策略调整。</p>
+      <div class="del">交付：首批询盘数据 + 政策材料提交 + 月度复盘会</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <b>关于效果的实话实说：</b>独立站与内容的自然起量通常需要 4–8 周，AI 搜索引用（GEO）需要 1–2 轮内容优化后才开始显现，显著成效一般需 3–6 个月持续投入。我们不承诺"一个月见效"——任何承诺一个月出效果的服务商，要么在买流量，要么在做你数据上看不到的事。<b>我们承诺的是节奏和交付物，不是奇迹。</b>
+  </div>
+</section>
+
+<!-- 06 保障 -->
+<section>
+  <div class="s-num">06 / 服务保障</div>
+  <h2>四条写进合同的承诺</h2>
+  <p class="s-lead">服务行业的钱不好赚，靠的是敢把话写进合同。</p>
+
+  <div class="guar">
+    <div class="g">
+      <div class="ic">✓</div>
+      <h4>资质认定不通过，全额退款</h4>
+      <p>高新技术企业认定、专精特新培育项目，未通过官方评审，我们退还该项全部服务费。第三方审计与官费按实结算。</p>
+    </div>
+    <div class="g">
+      <div class="ic">✓</div>
+      <h4>询盘不合格，不计费</h4>
+      <p>AI 精准询盘按 7 项标准验证：采购量、产品范围、客户画像、目标国家、沟通意愿、真实性、联系方式。不符合标准不计入交付数量。</p>
+    </div>
+    <div class="g">
+      <div class="ic">✓</div>
+      <h4>先评估，再签约</h4>
+      <p>任何政策申报项目，我们先判断您的企业条件是否达标。不适合申报的，如实告知，不接单、不收前期费用。</p>
+    </div>
+    <div class="g">
+      <div class="ic">✓</div>
+      <h4>资产和数据归您所有</h4>
+      <p>网站源码、域名、账号、内容素材、数据报告全部归客户所有，源码 100% 交付，无年费捆绑。合同终止后可完整迁移。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 常见问题 -->
+<section>
+  <div class="s-num">07 / 常见问题</div>
+  <h2>您可能想问的问题</h2>
+  <div class="faq" style="margin-top:14px">
+    <details><summary>我们已经有阿里国际站 / 亚马逊店铺了，还需要做独立站吗？</summary>
+      <div class="ans">需要，但目的不同。平台解决的是"上架和基础流量"，独立站解决的是"客户数据在你手里"和"你的专业形象完整呈现"。这两件事不冲突——成熟做法是平台走量、独立站走品牌和精准询盘，且两者线索可以互相导入。我们的诊断阶段会先判断您的平台投入产出情况，再给建议。</div></details>
+    <details><summary>GEO 是什么？跟以前的 SEO 有什么区别？</summary>
+      <div class="ans">SEO 是让客户在搜索结果里找到你，GEO 是让 AI 在回答里直接推荐你。海外采购商越来越多地直接问 AI"推荐几个靠谱的中国供应商"，品牌不在 AI 答案里就等于不存在。技术上主要差异是：GEO 需要让企业信息结构化、可被大模型准确读取和引用（如 Wikidata、Schema 标记、llms.txt 站点文件），并铺设在 AI 会检索的信源上。</div></details>
+    <details><summary>高新技术企业认定，我的企业大概要花多少、能省多少？</summary>
+      <div class="ans">认定后企业所得税率从 25% 降至 15%，此外还有研发费用加计扣除、亏损结转年限延长至 10 年等好处。服务费市场行情 3–8 万元，取决于企业规模、知识产权储备、研发财务规范程度。是否划算要看您的实际利润和研发投入——我们的诊断阶段会先算这笔账，觉得不划算会直接告诉您。</div></details>
+    <details><summary>数字化转型奖补，我能拿到多少？</summary>
+      <div class="ans">各地政策差异较大。以广州为例，按数字化改造项目核定投入的 50% 补助，按数字化水平分级：二级累计不超过 60 万，三级 100–200 万，四级 150–500 万。佛山按投入 30%，二级/三级最高 50 万、四级最高 70 万。政策有时效性，具体以当期申报通知为准，我们会以政府官网原文为准帮您核对。</div></details>
+    <details><summary>为什么你们不承诺"包过"？</summary>
+      <div class="ans">因为不存在"包过"。高企认定是省级组织专家评审，2025 年专精特新申报的淘汰率已达 83%。任何承诺包过的机构，要么在材料上做手脚（可能构成骗补，机构将被移送公安），要么在条款里藏了"不通过退款"但收你前期高额费用。我们选择把风险留在自己这边：不通过，全额退。</div></details>
+    <details><summary>服务合同一般怎么签、怎么退出？</summary>
+      <div class="ans">建议首期签 1 年，付款节奏可按"首付 30% + 季度"。合同中我们会明确：服务内容清单（不写"尽力提升排名"这种模糊表述）、交付物清单、KPI 量化标准（如同类目关键词进入前两屏数量）、数据归属权、退出机制。首期做满三个月如果不满意，可按约定条款终止并结清已完成工作量。</div></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="s-num" style="color:rgba(255,255,255,.65)">下一步</div>
+  <h2>从一次 2,980 元的行业诊断开始</h2>
+  <p class="lead">不需要先签年度合同。先让我们把您企业现在站在哪、能拿到什么、下一步做什么讲清楚。诊断费后续签约可全额抵扣。</p>
+
+  <div class="steps">
+    <div class="s">
+      <div class="n">STEP 01</div>
+      <h4>30 分钟沟通</h4>
+      <p>了解您的行业、产品结构、当前市场与政策现状，判断我们能不能帮上忙。</p>
+    </div>
+    <div class="s">
+      <div class="n">STEP 02</div>
+      <h4>出诊断报告</h4>
+      <p>5 个工作日内交付《出海可行性诊断》+《政策红利地图》+ 90 天动作清单。</p>
+    </div>
+    <div class="s">
+      <div class="n">STEP 03</div>
+      <h4>您来决定</h4>
+      <p>看完报告再决定是否合作。如果我们的判断是您暂时不需要，我们也会如实告知。</p>
+    </div>
+  </div>
+
+  <div class="final">
+    <div><b>2,980 元</b><span>行业诊断起价（可抵扣）</span></div>
+    <div><b>90 天</b><span>完整服务周期</span></div>
+    <div><b>0 元</b><span>第三方费用加价</span></div>
+    <div><b>100%</b><span>源码与数据归客户</span></div>
+  </div>
+</div>
+
+<footer>
+<b>免责声明</b>　本方案所列政策金额、比例、批次时间均以政府公开发布的当期文件为准，政策具有时效性，最终以官方审核结果为准。第三方检测、审计、认证费用由第三方机构收取，本方实报实销、不加价、不赚差价。服务范围以正式合同约定为准。文中引用的行业客单价、退货率等为第三方平台公开行业均值，各品类差异较大，具体数据以贵司实际情况为准。<br><br>
+<b>关于承诺</b>　我们不承诺"包过""一个月见效""保证排名"。我们承诺交付节奏、交付物、以及不合格不收费。
+</footer>
+
+</div>
+
+<script>
+function sw(i,el){
+  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('on')});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});
+  document.querySelectorAll('.pane')[i].classList.add('on');
+  el.classList.add('on');
+  window.scrollTo({top:document.querySelectorAll('.pane')[i].offsetTop-90,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广州 AI 企业服务公司 · 服务中国中小企业（双引擎版）</title>
+<style>
+:root{
+  --bg:#f7f8fa;--card:#fff;--ink:#1a1d23;--sub:#5a6270;--line:#e4e7ec;
+  --brand:#1a56db;--brand-soft:#eef2ff;--up:#c2410c;--up-soft:#fff4ec;
+  --good:#0f766e;--good-soft:#ecfdf5;--red:#b91c1c;--red-soft:#fef2f2;
+  --gold:#a16207;--gold-soft:#fefce8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding:44px 26px 80px}
+.hero{background:linear-gradient(135deg,#1a56db,#0b3ea8);color:#fff;border-radius:16px;padding:38px 42px}
+.hero h1{font-size:28px;font-weight:700;letter-spacing:-.3px;margin-bottom:10px}
+.hero p{font-size:15px;opacity:.93;max-width:840px}
+.hero .tagline{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.22);font-size:13.5px;opacity:.9}
+h2{font-size:21px;font-weight:700;margin:46px 0 6px;padding-left:13px;border-left:4px solid var(--brand)}
+h2 .en{font-size:12px;color:var(--sub);font-weight:500;display:block;margin-top:2px}
+.sub-lead{color:var(--sub);font-size:14px;margin-bottom:18px;padding-left:17px}
+h3.sub{font-size:16px;font-weight:700;margin:26px 0 10px;color:#374151}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+th{background:#f2f4f7;text-align:left;padding:11px 13px;font-weight:600;font-size:12.5px;color:#374151;border-bottom:1px solid var(--line)}
+td{padding:11px 13px;border-bottom:1px solid #f0f2f5;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfc}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.p-blue{background:var(--brand-soft);color:var(--brand)}
+.p-up{background:var(--up-soft);color:var(--up)}
+.p-good{background:var(--good-soft);color:var(--good)}
+.p-red{background:var(--red-soft);color:var(--red)}
+.p-gold{background:var(--gold-soft);color:var(--gold)}
+.p-gray{background:#f2f4f7;color:#4b5563}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.box h4{font-size:15px;font-weight:700;margin-bottom:9px}
+.box ul{margin-left:17px;font-size:13.5px;color:#374151}
+.box li{margin-bottom:5px}
+.note{background:#fffdf5;border:1px solid #fde68a;border-radius:10px;padding:16px 20px;font-size:13.5px;margin:16px 0}
+.note b{color:#92400e}
+.redbox{background:var(--red-soft);border:1px solid #fecaca;border-radius:10px;padding:18px 22px;font-size:13.5px;margin:18px 0}
+.redbox b{color:var(--red)}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.kpi .k{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:17px 18px;text-align:center}
+.kpi .k .v{font-size:22px;font-weight:700;color:var(--brand);letter-spacing:-.5px}
+.kpi .k .l{font-size:12px;color:var(--sub);margin-top:3px;line-height:1.4}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0}
+.engine{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:0;overflow:hidden}
+.engine .top{padding:16px 22px;color:#fff}
+.engine.a .top{background:linear-gradient(135deg,#1a56db,#0b3ea8)}
+.engine.b .top{background:linear-gradient(135deg,#c2410c,#9a3412)}
+.engine .top .t{font-size:17px;font-weight:700}
+.engine .top .s{font-size:12.5px;opacity:.92;margin-top:2px}
+.engine .body{padding:20px 22px}
+.engine .body .li{font-size:13.5px;margin-bottom:9px;padding-left:14px;position:relative}
+.engine .body .li:before{content:"▸";position:absolute;left:0;color:var(--brand);font-size:11px;top:1px}
+.engine.b .body .li:before{color:var(--up)}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.mini div{background:#f8f9fb;border-radius:8px;padding:10px 12px;font-size:12.5px}
+.mini div b{display:block;color:var(--ink);font-size:14px;margin-bottom:1px}
+.bridge{background:linear-gradient(135deg,#0f766e,#115e59);color:#fff;border-radius:14px;padding:26px 30px;margin:22px 0}
+.bridge h3{color:#fff;font-size:19px;font-weight:700;margin-bottom:8px}
+.bridge p{font-size:14px;opacity:.95}
+.bridge .formula{background:rgba(255,255,255,.15);border-radius:10px;padding:14px 18px;margin-top:14px;font-size:14px}
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);color:var(--sub);font-size:12.5px}
+@media(max-width:900px){.grid2,.grid3,.split,.mini{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <h1>广州 AI 企业服务公司 · 服务中国中小企业（双引擎版）</h1>
+  <p>客户群从「要出海的工厂」扩展为「所有要活下去的中小企业」。这不是加一条产品线——是换了一个引擎：出海赚的是<b>增量的市场</b>，补贴赚的是<b>存量的现金</b>。两条腿的周期、客群、现金流结构完全不同。</p>
+  <div class="tagline"><b>数据口径</b>：2026 年 4—10 月公开市场信息（广州/广东省政府官网公示政策、行业价格分层报告、央视网与央广网监管报道、头部机构公开口径）。价格均为市场挂牌或公示区间。</div>
+</div>
+
+<!-- ========== 判断 ========== -->
+<h2>零、先看清楚：这两条腿不是一回事<span class="en">TWO ENGINES, TWO DIFFERENT GAMES</span></h2>
+<p class="sub-lead">把它们混在一起想，是最贵的错误。表格能看清差别。</p>
+
+<div class="split">
+<div class="engine a">
+  <div class="top">
+    <div class="t">引擎 A｜出海获客（原方案）</div>
+    <div class="s">服务对象：有出口权、有海外订单压力的制造业工厂</div>
+  </div>
+  <div class="body">
+    <div class="li">客户画像：年出口额 300 万以上、做过阿里国际站或 B2B 独立站的厂</div>
+    <div class="li">决策人：外贸经理 / 老板，对「询盘量」敏感</div>
+    <div class="li">见效周期：3–6 个月（起量慢但复购强）</div>
+    <div class="li">客单价：年费 3–50 万</div>
+    <div class="li">现金流特征：前期垫人力，回款靠年框预付</div>
+    <div class="li">你的护城河：<b>汽配报价体系 + CTR 号 + 海外清关实务</b>——只有你能做</div>
+    <div class="mini">
+      <div><b>广州+佛山汽配/机械企业</b>数千家，需求明确</div>
+      <div><b>竞争</b>飞书深诺、易点天下、泛服务商</div>
+    </div>
+  </div>
+</div>
+
+<div class="engine b">
+  <div class="top">
+    <div class="t">引擎 B｜政策补贴（新增）</div>
+    <div class="s">服务对象：所有符合条件的企业（无行业门槛）</div>
+  </div>
+  <div class="body">
+    <div class="li">客户画像：有研发投入、有知识产权、想拿税减和奖补的所有企业</div>
+    <div class="li">决策人：老板 / 财务负责人，对「能拿到多少钱」敏感</div>
+    <div class="li">见效周期：3–6 个月拿资质，补贴可能延迟到账</div>
+    <div class="li">客单价：单项 0.3–1.5 万，组合 3–12 万</div>
+    <div class="li">现金流特征：<b>客户重服务费轻抽成，官方审核是硬门槛</b></div>
+    <div class="li">你的护城河：<b>广州本地政策关系 + 快速匹配能力 + 财税交付网络</b>——这块要另找资源</div>
+    <div class="mini">
+      <div><b>广州在册企业</b>超 200 万家，基数极大</div>
+      <div><b>竞争</b>湘应、中佳、快创通、财税所</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="bridge">
+  <h3>🔗 但它们有一个天然的接口——这才是关键</h3>
+  <p>广州市工业和信息化局 2026 年明确：专精特新企业<strong>「数字化改造补贴按核定投入的 50% 给予最高 150 万元补助」</strong>，同时明确 <strong>「20% 的政策资金用于支持供给侧服务商」</strong>。</p>
+  <div class="formula">
+    出海服务 = 让企业拿到海外订单（引擎 A）<br>
+    数字化学历+ 政策补贴服务 = 让企业把这笔订单额变成政府奖补（引擎 B）<br>
+    <b>→ 客户先买出海服务，再买数字化项目，数字化项目拿 50% 奖补，用奖补支付出海服务费。闭环成立。</b>
+  </div>
+</div>
+
+<div class="redbox">
+<b>⚠️ 但有一条红线必须说清楚</b><br>
+补贴服务是<b>官方审核制</b>，不是营销服务。政策明确：科技型中小企业入库<strong>全程免费、不向企业收取任何费用</strong>；高企认定是<strong>企业自主申报</strong>，服务费只能收「咨询辅导费」，第三方审计费用必须实报实销、不赚差价。<br><br>
+更重要的是：2026 年 8 月央视网、央广网连续报道「领取十万元创业补贴，中介能否抽走两万」——<b>按补贴金额抽成（普遍 10–20%）已被多地监管明确定性为违规</b>，协助骗补的机构<b>一律移送公安机关</b>。台州已有企业负责人因伪造租赁合同骗取 3.98 万补贴被判<b>诈骗罪、有期徒刑一年缓一年六个月</b>。<br><br>
+<b>结论：引擎 B 可以做，但商业模式必须从「效果对赌」改成「固定服务费 + 官方公开可核验」。</b>这条线一旦设计成抽成模式，你的公司法律风险直接落到创始人身上。
+</div>
+
+<!-- ========== 模块 ========== -->
+<h2>一、模块总表：双引擎 10 模块<span class="en">MODULE MAP</span></h2>
+<p class="sub-lead">引擎 A 保留原 8 模块结构（这里只列价格锚点），引擎 B 新增 4 个模块。标注 <span class="pill p-up">B</span> 的是补贴线。</p>
+
+<table>
+<thead><tr><th>模块</th><th>引擎</th><th>做什么</th><th>价格</th><th>毛利目标</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td><b>L1 数字基建</b></td><td><span class="pill p-blue">A+B</span></td><td>独立站/企业官网、多语种、域名邮箱、SSL</td><td class="num">9,800–30,000<br>一次</td><td>30–45%</td><td>出海客户独立站；补贴客户官网改造</td></tr>
+<tr><td><b>L2 内容与社媒</b></td><td><span class="pill p-blue">A</span></td><td>AI 素材工厂、社媒矩阵、内容投放</td><td class="num">4,500–15,000/月</td><td>40–55%</td><td>人力密集，只能人海</td></tr>
+<tr><td><b>L3 GEO（AI 搜索优化）</b></td><td><span class="pill p-blue">A</span></td><td>让 AI 在采购问答中推荐企业</td><td class="num">6,800–30,000/月</td><td>50–65%</td><td>2026 最蓝的一条</td></tr>
+<tr><td><b>L4 AI 精准询盘</b></td><td><span class="pill p-blue">A</span></td><td>按有效询盘计费，不合格不计费</td><td class="num">200–1,200/条</td><td>50–70%</td><td>传统平台 1,400–4,000/条</td></tr>
+<tr><td><b>L5 AI 外贸员</b></td><td><span class="pill p-blue">A</span></td><td>多语言自动跟进、报价、催单、约会议</td><td class="num">1,980–4,980/月</td><td>60–75%</td><td>SaaS 成本极低</td></tr>
+<tr><td><b>L6 汽配报价系统</b></td><td><span class="pill p-blue">A</span></td><td>OEM 号/车型/发动机自动匹配报价</td><td class="num">18,000–35,000<br>+4,800–8,000/年</td><td>65%</td><td><b>唯一无人能抄的护城河</b></td></tr>
+<tr><td><b>L7 展会营销</b></td><td><span class="pill p-blue">A</span></td><td>Meta 广告 + 展前蓄客 + 展后线索追踪</td><td class="num">5–30万/场</td><td>45–55%</td><td>广州汽配展全年场次</td></tr>
+<tr><td><b>L8 陪跑营</b></td><td><span class="pill p-blue">A+B</span></td><td>老板付费诊断、陪跑、AI 认知落地</td><td class="num">3,800–19,800</td><td>75–85%</td><td>最赚钱的口碑产品</td></tr>
+<tr><td><b>L9 <span class="pill p-up">B</span> 政策雷达与匹配</b></td><td><span class="pill p-up">B</span></td><td>诊断企业能拿哪些政策、缺什么条件、什么时候截止</td><td class="num">2,980–6,800/次</td><td>75–85%</td><td><b>引擎 B 的入口产品</b>，纯咨询零风险</td></tr>
+<tr><td><b>L10 <span class="pill p-up">B</span> 资质认定代办</b></td><td><span class="pill p-up">B</span></td><td>科技型中小企业、专精特新、高企、创新型中小企业</td><td class="num">0.5–15万/项</td><td>40–55%</td><td>见下方价格表</td></tr>
+</tbody>
+</table>
+
+<!-- ========== 补贴模块细价 ========== -->
+<h2>二、政策补贴模块：市场真实价格表<span class="en">SUBSIDY SERVICE PRICING</span></h2>
+<p class="sub-lead">这一档价格全国相对透明，因为有大量机构公开挂牌。以下是全国价格分层 + 广州本地市场行情。</p>
+
+<table>
+<thead><tr><th>项目</th><th>政策价值（企业拿到多少）</th><th>市场服务费</th><th>第三方实报实销</th><th>合规雷区</th></tr></thead>
+<tbody>
+<tr>
+  <td><b>科技型中小企业入库</b><br><span class="pill p-gray">官方全程免费</span></td>
+  <td class="num">研发费用加计扣除<br>75% → <b>100%</b><br>亏损结转 5 年 → 10 年<br>部分地区首次入库奖励最高 30 万</td>
+  <td class="num">0.5–1.5万<br><span class="pill p-gray">基础 3,000–8,000/次</span></td>
+  <td>无</td>
+  <td>官方零收费，<b>谁收费谁被怀疑</b>；虚假信息入库进诚信档案</td>
+</tr>
+<tr>
+  <td><b>高新技术企业认定</b><br><span class="pill p-up">利润最大项</span></td>
+  <td class="num">所得税 <b>25% → 15%</b><br>（年营收 2 亿企业<br>节税可达数十万至百万级）</td>
+  <td class="num">3–8 万<br><span class="pill p-red">1–2 万全包=骗</span></td>
+  <td class="num">专项审计 0.8–2万<br>专利 0.3–2万/件<br>软著 0.1–0.2万/件</td>
+  <td>必须「先评估后签约」；<b>不通过全额退款</b>的条款要写进合同；材料造假追缴+信用惩戒</td>
+</tr>
+<tr>
+  <td><b>专精特新中小企业</b></td>
+  <td class="num">广州市专精特新中小企业<br>7,175 家在库<br>「小巨人」最高 <b>100 万</b> | 国家级单项冠军最高 <b>150 万</b></td>
+  <td class="num">1–3 万</td>
+  <td class="num">审计+专利 1–3万</td>
+  <td>2025 年申报淘汰率已升至 <b>83%</b>，不是「包过」的生意</td>
+</tr>
+<tr>
+  <td><b>专精特新「小巨人」</b></td>
+  <td class="num">广东省：珠三角 <b>100 万</b>／家<br>粤东西北 <b>120 万</b>／家<br>广州另有最高 100 万奖补</td>
+  <td class="num">5–15 万</td>
+  <td class="num">3–8 万</td>
+  <td>要求最高；淘汰率 83%</td>
+</tr>
+<tr>
+  <td><b>数字化转型奖补</b><br><span class="pill p-up">最值钱</span></td>
+  <td class="num">按核定投入 <b>50%</b><br>二级累计≤60 万｜三级 100–200万<br>四级 150–<b>500 万</b><br>广州目标：<b>710 家</b>改造至二级以上</td>
+  <td class="num">8–20 万<br><span class="pill p-gray">或按核定投入 8–12% 抽服务费</span></td>
+  <td class="num">系统/集成实报实销</td>
+  <td><b>政策明确 20% 资金用于支持供给侧服务商</b>——这是政府给你的合法收入</td>
+</tr>
+<tr>
+  <td><b>研发费用加计扣除常年顾问</b></td>
+  <td class="num">加计扣除比例最高 <b>100%</b><br>（年营收 5000万以下研发费占比≥5%）</td>
+  <td class="num">1–3 万/年</td>
+  <td>无</td>
+  <td>必须基于真实项目，<b>不得事后拼凑</b></td>
+</tr>
+<tr>
+  <td><b>中小企业发展专项资金</b></td>
+  <td class="num">各地不同，10–50 万不等</td>
+  <td class="num">3–8 万</td>
+  <td class="num">审计 0.8–2 万</td>
+  <td>周期 45–75 个工作日</td>
+</tr>
+<tr>
+  <td><b>高新技术企业复审（3 年一次）</b></td>
+  <td class="num">维持 15% 税率</td>
+  <td class="num">1–3 万</td>
+  <td class="num">0.5–1 万</td>
+  <td>断档后所得税追缴，风险大</td>
+</tr>
+</tbody>
+</table>
+
+<div class="kpi">
+  <div class="k"><div class="v">48 万家</div><div class="l">全国高企存量<br>年均申报 20–25 万家次</div></div>
+  <div class="k"><div class="v">250–300 万</div><div class="l">2025 年全国政策申报<br>委托项目总量</div></div>
+  <div class="k"><div class="v">40–55%</div><div class="l">区域型专业机构<br>真实毛利水平</div></div>
+  <div class="k"><div class="v">83%</div><div class="l">2025 年专精特新<br>申报淘汰率</div></div>
+</div>
+
+<!-- ========== 标杆 ========== -->
+<h2>三、标杆模仿对象（补贴线）<span class="en">BENCHMARK PLAYERS — SUBSIDY</span></h2>
+
+<h3 class="sub">Tier 1｜全国头部（学结构与风控，不学规模）</h3>
+<table>
+<thead><tr><th>公司</th><th>产品结构与规模</th><th>可抄的 / 不可抄的</th></tr></thead>
+<tbody>
+<tr>
+  <td><b>上海湘应企服</b><br><span class="pill p-up">最值得研究</span></td>
+  <td>60+ 人交付团队（含注册会计师、高级经济师）；总部上海 + 北京/广东/南京/合肥/无锡 3 分公司 7 办事处；<b>累计服务超 5,000 家</b>，含 20 家上市公司、30 家国央企；高企市占率 9.8–12.8%，专精特新 15.6–19.8%</td>
+  <td>✅ 抄<b>「先评估后签约」机制</b>——先判断企业能不能过，不适合就劝退，不接单<br>✅ 抄方法论命名：「以简驭繁、追根溯源、效率优先、考虑长远」<br>❌ 他们的护城河是 5,000 家案例库和 CPA 团队，不是 AI</td>
+</tr>
+<tr>
+  <td><b>中佳 / 快创通 / 华夏认证 / 北京企源 / 深圳天翔</b></td>
+  <td>Tier 1 主导市场，共同特征：一站式（资质+知识产权+财税+认证）</td>
+  <td>✅ 抄<b>打包逻辑</b>：把「科小 → 高企 → 专精特新 → 小巨人」做成阶梯式申报产品<br>❌ 他们靠 20 年积累的政策数据库和专家池</td>
+</tr>
+<tr>
+  <td><b>上海初粹信息</b><br><span class="pill p-blue">垂直赛道型</span></td>
+  <td>专注 AI/数字经济/软件信息服务；能构建 API 调用记录、用户活跃数据、SLA 达成率等<b>非传统证据链</b></td>
+  <td>✅ 这条最关键：<b>不同赛道需要不同证据链</b>。汽配企业的证据链是专利+工装+检测报告，不是算法日志<br>⚠️ 这正好是你能做的差异化——<b>做汽配垂直证据链</b></td>
+</tr>
+<tr>
+  <td><b>上海驭繁</b><br><span class="pill p-gray">普惠轻量型</span></td>
+  <td>中小微首申报，标准化方案，响应快</td>
+  <td>✅ 抄「标准化 SOP 换毛利」的思路</td>
+</tr>
+</tbody>
+</table>
+
+<h3 class="sub">广州本地｜可直接对标的对手</h3>
+<table>
+<thead><tr><th>公司</th><th>挂牌价格</th><th>特点与软肋</th></tr></thead>
+<tbody>
+<tr><td><b>广州献策管理咨询</b></td><td class="num">高企 <b>0 元前期费用</b>，成功再付款，30,000 元起<br>工程技术中心 5,000 元起｜专精特新 5,000 元起<br>发明专利 6,500 元起｜实用新型 2,500 元起</td><td>「0 元前期」是很好的获客钩子；<b>但先付款模式对现金流压力大</b>，你若要学，先想清楚钱从哪来</td></tr>
+<tr><td><b>广州粤天企业管理</b></td><td class="num">基础申报 3–5 万｜全包 5–8 万｜VIP 8–12 万<br>加急额外 20–30%<br>专项审计 1–1.5 万/项</td><td>✅ 值得抄：<b>「不通过全额退款」</b>+ 免费前期诊断 + 3 年免费跟踪<br>⚠️ 加急 20–30% 是危险设计，别学</td></tr>
+<tr><td><b>广东深圳天翔 / 各地财税所</b></td><td class="num">科小 3,000–8,000<br>专精特新基础辅导 1–3 万<br>高企基础代办 1.8–3 万</td><td>低价竞争激烈；1–2 万「全包」是 2026 年<b>驳回率最高的档位</b></td></tr>
+<tr><td><b>广州特讯 / 各类财税公司</b></td><td class="num">专精特新基础代理数万起<br>全套餐 10 万+</td><td>广州本地通达优势明显（本地评审关系、本地服务网络）</td></tr>
+</tbody>
+</table>
+
+<div class="redbox">
+<b>🚫 绝对不能碰的三件事</b>
+<ol style="margin-left:20px;margin-top:8px">
+<li><b>不按补贴金额抽成</b>——2026 年 8 月央视网、央广网已点名，多地监管明确定性为违规，机构要被移送公安。</li>
+<li><b>不做「包过」承诺</b>——高企评审是专家打分制，不存在 100% 通过。写了这句话，一旦失败就是欺诈纠纷。</li>
+<li><b>不碰材料造假</b>——伪造租赁合同虚增经营时长、虚增金额，<b>直接构成诈骗罪</b>（台州判例：有期徒刑一年缓一年六个月+ 罚金 5,000）。这是你公司创始人个人要担的风险。</li>
+</ol>
+</div>
+
+<!-- ========== 套餐 ========== -->
+<h2>四、双引擎套餐设计<span class="en">PACKAGING</span></h2>
+
+<table>
+<thead><tr><th>套餐</th><th>包含</th><th>价格</th><th>作用</th></tr></thead>
+<tbody>
+<tr>
+  <td><b>政策体检包</b><br><span class="pill p-up">引擎 B 入口</span></td>
+  <td>企业政策雷达诊断：能拿哪些政策、缺哪些条件、截止时间、预估金额；输出一份《政策红利地图》</td>
+  <td class="num">2,980–6,800<br><span class="pill p-good">可抵后续服务费</span></td>
+  <td><b>零合规风险</b>（纯咨询）。用3–5 家试点客户换案例和政策库</td>
+</tr>
+<tr>
+  <td><b>资质速通包</b></td>
+  <td>科小入库+ 高企认定（或专精特新）全套辅导；<b>固定服务费，第三方费用实报实销、不赚差价</b>；不通过退款条款</td>
+  <td class="num">3–8 万<br>高企另+审计专利实报</td>
+  <td>主力现金流产品</td></tr>
+<tr>
+  <td><b>数字化转型项目</b><br><span class="pill p-good">政策+AI 双收</span></td>
+  <td>帮企业申报数字化转型奖补（<b>50%，最高 500 万</b>），并承接其中数字化系统实施部分</td>
+  <td class="num">按核定投入 <b>8–12%</b> 收服务费<br>+ 政策明文 20% 供给侧资金</td>
+  <td><b>政策原文明确 20% 资金支持供给侧服务商</b>——这是政府给你的合法收入，不是抽成</td>
+</tr>
+<tr>
+  <td><b>出海启航包</b><br><span class="pill p-blue">引擎 A</span></td>
+  <td>独立站 + 内容工厂 + 社媒矩阵 + GEO 标准 + AI 外贸员</td>
+  <td class="num">6.8–8.8 万/年<br>（可拆首付 2 万）</td>
+  <td>主推年框</td>
+</tr>
+<tr>
+  <td><b>出海增长包</b></td>
+  <td>启航包全部 + 多市场 GEO + AI 精准询盘 + <b>汽配报价系统</b> + 三平台社媒</td>
+  <td class="num">15.8–28 万/年<br>+ 询盘效果对赌</td>
+  <td>高毛利</td>
+</tr>
+<tr>
+  <td><b>双引擎全家桶</b><br><span class="pill p-up">客单价最高</span></td>
+  <td>出海增长包 + 高企/专精特新认定 + 数字化转型奖补申报<br><b>闭环：奖补资金用于支付出海服务费</b></td>
+  <td class="num">25–45 万/年</td>
+  <td><b>这是唯一没人能抄的组合</b></td>
+</tr>
+</tbody>
+</table>
+
+<!-- ========== 落地 ========== -->
+<h2>五、起手顺序：双引擎该怎么排<span class="en">SEQUENCING</span></h2>
+
+<div class="card">
+<div style="display:grid;grid-template-columns:76px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)">
+  <div class="mtag" style="background:linear-gradient(160deg,#0f766e,#115e59);color:#fff;border-radius:10px;padding:10px 6px;text-align:center;font-weight:700;font-size:15px;height:58px;display:flex;align-items:center;justify-content:center">第<br>1月</div>
+  <div>
+    <div class="mname">先做引擎 B 的「政策体检包」，不碰任何代办</div>
+    <div class="mdesc">2,980 元的纯咨询，<b>零合规风险、零审核门槛、现金流即时到账</b>。跑 5 家广州汽配/机械厂，换来：5 份真实诊断报告 + 一个小型政策库 + 5 个可讲的案例。<b>这是最快摸清「老板到底最想要哪笔补贴」的方式。</b></div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:76px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)">
+  <div class="mtag" style="background:linear-gradient(160deg,#0f766e,#115e59);color:#fff;border-radius:10px;padding:10px 6px;text-align:center;font-weight:700;font-size:15px;height:58px;display:flex;align-items:center;justify-content:center">第<br>2月</div>
+  <div>
+    <div class="mname">搭引擎 A 的第一个案例（用 UP 自己）</div>
+    <div class="mdesc">引擎 A 才是你的<b>差异化</b>（汽配报价体系没人抄），引擎 B 只是<b>现金流</b>。别把顺序倒过来——用引擎 B 的钱养引擎 A 的能力。</div>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:76px 1fr;gap:18px;padding:16px 0">
+  <div class="mtag" style="background:linear-gradient(160deg,#0f766e,#115e59);color:#fff;border-radius:10px;padding:10px 6px;text-align:center;font-weight:700;font-size:15px;height:58px;display:flex;align-items:center;justify-content:center">第<br>3月+</div>
+  <div>
+    <div class="mname">再启动资质代办，先做「先评估后签约」</div>
+    <div class="mdesc">这一步才需要外部资源：注册会计师、审计所、专利代理。<b>你的角色是「判断能不能过 + 教客户怎么准备」</b>，不是「代写材料」。审计和官费必须实报实销、不赚差价——这是行业底线，也是你的免责盾。</div>
+  </div>
+</div>
+</div>
+
+<div class="note">
+<b>💡 关于「不赚差价」这件事，值得多说一句</b><br>
+很多财税公司靠审计费、专利代理费吃差价。一年下来这笔隐形收入可能顶 half 的服务费。但你现在不是巨头，没有 5,000 家案例做背书——客户凭什么信你？<b>「审计费我一分钱不加」本身就是最强的信任证明，也是你跟本地财税所最明显的差异。</b>这笔钱让出去，换来的是转介绍和口碑。
+</div>
+
+<footer>
+数据来源：广州市人民政府/广东省人民政府官网、南方日报、南方+、广州市科技创新局通知、粤企政策通；行业价格分层引自 QYResearch 政策申报辅导服务市场报告；标杆机构口径引自上海湘应公开服务说明；风险引自央视网 2026-08-04、央广网 2026-08-06/08 报道及台州判例。<br>
+⚠️ 所有政策金额与比例均以 2026 年公开公示为准，政策有时效性——正式签约前必须核对最新文件。企业决策前建议以政府官网原文为准，并聘请持牌税务师复核。
+</footer>
+
+</div>
+</body>
+</html>
