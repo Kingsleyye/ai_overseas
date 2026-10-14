@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>售前培训手册 · 说人话版</title>
+<style>
+:root{
+ --ink:#111418;--sub:#5b6472;--line:#e3e7ed;--bg:#f6f7f9;--card:#fff;
+ --brand:#1548b8;--brand-s:#eef3ff;--up:#b8531c;--up-s:#fff3ec;
+ --good:#0d7a6f;--good-s:#eafaf7;--red:#b3261e;--red-s:#fdf1f0;
+ --gold:#96650a;--gold-s:#fdf8e6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+ background:var(--bg);color:var(--ink);line-height:1.78;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;background:var(--card);
+ box-shadow:0 1px 3px rgba(16,24,40,.05),0 12px 40px rgba(16,24,40,.06)}
+.hero{background:linear-gradient(135deg,#1548b8,#0d3487);color:#fff;padding:46px 54px 42px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-80px;top:-90px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.05)}
+.hero .kick{font-size:12px;letter-spacing:3px;opacity:.82;margin-bottom:12px;font-weight:600}
+.hero h1{font-size:29px;font-weight:700;line-height:1.4;margin-bottom:12px}
+.hero .sub{font-size:15.5px;opacity:.94;max-width:760px}
+section{padding:40px 54px;border-bottom:1px solid var(--line)}
+.s-num{font-size:11px;font-weight:700;color:var(--brand);letter-spacing:2px;margin-bottom:6px}
+h2{font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:-.2px;line-height:1.45}
+h3{font-size:16px;font-weight:700;margin:26px 0 10px}
+.s-lead{color:var(--sub);font-size:14px;margin-bottom:22px;max-width:860px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:#f2f4f7;text-align:left;padding:11px 13px;font-weight:600;font-size:12.5px;color:#374151;border-bottom:1px solid var(--line)}
+td{padding:11px 13px;border-bottom:1px solid #eef1f4;vertical-align:top;line-height:1.72}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfd}
+td.k{font-weight:600;width:112px;color:#263041;white-space:nowrap}
+tr.alt{background:#fbfcfd}
+
+/* 核心认知 */
+.big{background:linear-gradient(135deg,#1548b8,#0d3487);color:#fff;border-radius:13px;padding:26px 30px;margin-bottom:18px}
+.big .n{font-size:11.5px;letter-spacing:2px;opacity:.8;margin-bottom:8px;font-weight:600}
+.big .q{font-size:21px;font-weight:700;margin-bottom:12px;line-height:1.5}
+.big .q small{display:block;font-size:14px;font-weight:500;opacity:.88;margin-top:6px;line-height:1.6}
+.big .a{font-size:14.5px;line-height:1.85;background:rgba(255,255,255,.12);border-radius:10px;padding:15px 19px}
+
+/* 模块卡 */
+.mods{display:flex;flex-direction:column;gap:12px}
+.mod{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+.mod .top{display:grid;grid-template-columns:62px 1fr;gap:17px;padding:17px 20px;align-items:start;border-bottom:1px solid var(--line);background:#fcfcfd}
+.mod.core .top{background:linear-gradient(90deg,#fdf8f6,#fcfcfd)}
+.mod .id{background:var(--brand-s);color:var(--brand);border-radius:9px;text-align:center;padding:8px 2px;font-weight:700;font-size:14px}
+.mod.core .id{background:var(--up-s);color:var(--up)}
+.mod h4{font-size:15.5px;font-weight:700;margin-bottom:5px}
+.mod .one{font-size:14px;color:var(--ink);background:#f4f7ff;border-left:3px solid var(--brand);padding:9px 13px;border-radius:0 7px 7px 0;margin-top:7px;line-height:1.72}
+.mod.core .one{background:#fff5ef;border-left-color:var(--up)}
+.mod .bd{padding:15px 20px}
+.row{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:9px 0;border-bottom:1px dashed #eef1f4;font-size:13.5px;line-height:1.75}
+.row:last-child{border-bottom:none;padding-bottom:0}
+.row .lb{font-weight:700;color:var(--sub);font-size:12.5px}
+.row .tx{color:#3d4552}
+.row .tx b{color:var(--ink)}
+
+/* 标签 */
+.tag{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:5px}
+.t-yes{background:var(--good-s);color:var(--good)}
+.t-no{background:var(--red-s);color:var(--red)}
+.t-care{background:var(--gold-s);color:var(--gold)}
+
+/* 卡片组 */
+.cards{display:grid;gap:13px}
+.cards.two{grid-template-columns:1fr 1fr}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+.c{border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:#fff}
+.c h4{font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.c p{font-size:13.5px;color:var(--sub);line-height:1.75}
+.c .say{background:#f4f7ff;border-left:3px solid var(--brand);padding:10px 13px;border-radius:0 7px 7px 0;margin-top:11px;font-size:13.5px;line-height:1.72;color:#20365e}
+.c.red{border-color:#fecaca;background:var(--red-s)}
+.c.red .say{background:#fff;border-left-color:var(--red);color:var(--red)}
+.c.green{border-color:#a7f3d0;background:var(--good-s)}
+.c.green .say{background:#fff;border-left-color:var(--good);color:#0a5f56}
+.c .em{font-size:19px}
+
+/* 话术 */
+.script{background:#fbfcfd;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:13px}
+.script .stage{font-size:11px;font-weight:700;color:var(--brand);letter-spacing:1.5px;margin-bottom:9px}
+.script .say{background:#fff;border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:0 8px 8px 0;
+ padding:13px 17px;font-size:14px;line-height:1.85;color:#1f2937}
+.script .note{font-size:12.5px;color:var(--sub);margin-top:9px;padding-left:14px;line-height:1.72}
+.script.red{border-color:#fecaca}
+.script.red .say{border-left-color:var(--red);background:var(--red-s)}
+.script.green{border-color:#a7f3d0}
+.script.green .say{border-left-color:var(--good);background:var(--good-s)}
+
+/* 流程 */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:8px}
+.flow .f{padding:0 15px;border-left:1px solid var(--line);position:relative}
+.flow .f:first-child{border-left:none;padding-left:0}
+.flow .f:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.flow .f:first-child:before{display:none}
+.flow .m{font-size:11px;font-weight:700;color:var(--brand);letter-spacing:.4px;margin-bottom:5px}
+.flow h4{font-size:14px;font-weight:700;margin-bottom:6px}
+.flow p{font-size:12.5px;color:var(--sub);line-height:1.72}
+.flow .goal{margin-top:8px;font-size:11.8px;color:var(--up);font-weight:600}
+
+.hl{background:var(--gold-s);border-left:3px solid var(--gold);border-radius:0 9px 9px 0;padding:15px 19px;margin:16px 0;font-size:13.5px;color:#5c4508;line-height:1.78}
+.hl b{color:#5c4508}
+.redbox{background:var(--red-s);border-left:3px solid var(--red);border-radius:0 9px 9px 0;padding:15px 19px;margin:16px 0;font-size:13.5px;color:#7a2019;line-height:1.78}
+.redbox b{color:var(--red)}
+.greenbox{background:var(--good-s);border-left:3px solid var(--good);border-radius:0 9px 9px 0;padding:15px 19px;margin:16px 0;font-size:13.5px;color:#2c4f4b;line-height:1.78}
+.greenbox b{color:var(--good)}
+footer{padding:26px 54px 34px;font-size:12px;color:var(--sub);line-height:1.85;background:#fbfcfd}
+@media(max-width:960px){
+ .hero,section,footer{padding-left:24px;padding-right:24px}
+ .cards.two,.cards.three,.flow{grid-template-columns:1fr}
+ .flow .f{border-left:none;border-top:1px solid var(--line);padding:14px 0 0}
+ .flow .f:first-child{border-top:none}
+ .mod .top{grid-template-columns:54px 1fr}
+ .row{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="kick">售前培训手册 · 说人话版</div>
+  <h1>你不需要懂技术，<br>你只需要懂"什么问题该开什么药"</h1>
+  <p class="sub">这份手册不教你背产品。它教你三件事：客户坐下来说的第一句话怎么接、客户描述的每个痛点对应哪个方案、每个方案背后有什么真实数据支撑。</p>
+</div>
+
+<!-- ============ 01 ============ -->
+<section>
+  <div class="s-num">01 / 先建立正确的认知</div>
+  <h2>售前的本质不是介绍，是诊断</h2>
+  <p class="s-lead">新手最常犯的错，是客户一坐下就开始介绍产品。结果是：客户听了十分钟，记住一句话——"这家公司挺能说的"。</p>
+
+  <div class="big">
+    <div class="n">客户脑子里真正在问的问题</div>
+    <div class="q">"你能不能解决我的问题？"
+      <small>注意：不是"你们有什么服务"，不是"多少钱起步"，而是"我这个问题你懂不懂、能不能解决"。</small>
+    </div>
+    <div class="a">
+      所以你的顺序必须是：<b>先问出他的问题 → 告诉他这个问题普遍怎么解 → 再说你有什么</b>。<br>
+      如果你反过来做，客户会觉得你在推销，而不是在帮他。
+    </div>
+  </div>
+
+  <h3>一个必须记住的比例</h3>
+  <table>
+    <tr><td class="k">客户说话时间</td><td><b>占整场对话的 60–70%</b>——你在听、在记、在判断他是哪一类问题</td></tr>
+    <tr class="alt"><td class="k">你说话时间</td><td>占 30–40%，而且主要是<strong>提问和复述</strong>，不是介绍产品</td></tr>
+    <tr><td class="k">产品介绍时机</td><td>客户明确问你"那你们怎么收费""有没有别人做过"之后，才开始讲</td></tr>
+    </tbody>
+  </table>
+
+  <div class="hl">
+    <b>你不懂技术反而是优势</b>　技术出身的售前容易犯的错是"客户听不懂我就讲得更细"。真正的销售是：客户听不懂的地方，<b>翻译成他的行业语言</b>。比如 GEO 这件事，客户不需要知道 llms.txt 是什么，只需要知道"海外采购越来越多直接问 AI，公司不在 AI 答案里就等于不存在"。
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section>
+  <div class="s-num">02 / 十个模块 · 说人话版</div>
+  <h2>每个产品，客户听得懂的那一句</h2>
+  <p class="s-lead">下面每一块，第一句是<strong>你可以直接对客户说的话</strong>。后面是客户会问什么、真正痛在哪、价值在哪。<span class="tag t-no">红字</span>是绝对不能对客户说的。</p>
+
+  <div class="mods">
+
+    <!-- L0 -->
+    <div class="mod core">
+      <div class="top"><div class="id">L0</div><div>
+        <h4>行业适配包 <span class="tag t-care">这是你卖其他东西的地基</span></h4>
+        <div class="one">"我们上手任何一个行业，第一件事不是做网站，是先把你们这个行业的产品怎么分类、买家怎么搜索、要注意什么合规，搞成一套模板。有了这套模板，后面的活儿就快，也不容易出错。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"这个听起来挺虚的，到底包含什么？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">六样东西：① 产品怎么分类展示的结构 ② 详情页信息怎么排 ③ 这个行业要过什么认证 ④ 买家会搜什么词 ⑤ 常见问题怎么回答 ⑥ 图片拍成什么样<br><b>客户听得懂的说法</b>："相当于我们先花几天把你们行业的家底摸清楚，后面每一步都有依据，不用拍脑袋。"</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">给客户的感觉是"<b>你懂我们行业，不是随便做一套网页</b>"。这是信任的起点，也是你区别于普通建站公司的第一句话。</div></div>
+        <div class="row"><div class="lb">不能说什么</div><div class="tx"><span style="color:var(--red)">❌"我们有一套模板，第二个客户只收 3800"——这是你的内部复用逻辑，客户听了会觉得他在为别人的服务付全价。</span></div></div>
+      </div>
+    </div>
+
+    <!-- L1 -->
+    <div class="mod">
+      <div class="top"><div class="id">L1</div><div>
+        <h4>数字基建（独立站 / 官网）</h4>
+        <div class="one">"给海外客户一个能看懂你产品的地方。现在很多工厂的产品资料是中文 PDF，或者一张图加几个字，客户打开就走了。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"我已经有阿里国际站了，还需要独立站吗？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx"><b>平台和独立站是两件不同的事。</b>平台是"货架"，人家在上面逛；独立站是"你的 showroom"，客户数据在你手里，产品能完整讲清楚，AI 才能准确理解你。<br><b>行业数据佐证</b>：独立站建站方案中 SaaS 占比已从 2023 年 45% 升到 2026 年预计超 70%。有真实案例：某年营收 80 万的家居厂，原计划花 8 万做定制站、每年再付 2 万维护费，上线后 90% 功能闲置；换成 SaaS 后年费不到 3,000，<b>询盘量反而涨了 12%</b>。</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">客户的名字和产品信息变成 AI 和搜索引擎能读懂的东西 → 被动等询盘变成主动被找到。</div></div>
+        <div class="row"><div class="lb">不能说什么</div><div class="tx"><span style="color:var(--red)">❌ "建站 2,998 就行"——客户会问"那后面每年还要交钱吗"，容易起纠纷。一开始就要讲清楚有没有年费。</span></div></div>
+      </div>
+    </div>
+
+    <!-- L2 -->
+    <div class="mod">
+      <div class="top"><div class="id">L2</div><div>
+        <h4>内容与社媒</h4>
+        <div class="one">"把中文资料变成海外客户愿意看、看得懂的内容。机器翻译出来的英文，规格参数、单位、公差全错位，买家看不懂就走了。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"能不能用 AI 批量做？会不会内容都一样？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">AI 用来提速，但<b>行业差异决定了投入差别</b>：<br>· 汽配——安装演示素材一套能覆盖多个产品线，最省<br>· 家具——场景图 AI 生成 30–80 元/张，实拍 800–1500 元<br>· 珠宝/非遗——必须拍工艺过程和匠人故事，AI 生成不了，这是最贵的一块</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">不是"我们有内容团队"，而是"<b>你的上新周期从周级压到天级，SKU 再多也不会断档</b>"。</div></div>
+        <div class="row"><div class="lb">⚠️ 签约前必问</div><div class="tx">服装行业：SKU 总数 + 月均上新频次。这两项不定，报价会亏。<br>客户不答就直接报最低价，是自找麻烦。</div></div>
+      </div>
+    </div>
+
+    <!-- L3 -->
+    <div class="mod">
+      <div class="top"><div class="id">L3</div><div>
+        <h4>GEO — 让 AI 推荐你 <span class="tag t-care">2026 年最能卖的新概念</span></h4>
+        <div class="one">"现在海外采购越来越多直接问 AI：'推荐几个靠谱的中国汽配供应商'。你的品牌不在 AI 的答案里，就等于在客户名单上查无此人。这就是 GEO——让 AI 在回答里提到你。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"这跟以前的 SEO 有什么区别？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx"><b>SEO 是让客户在搜索结果里找到你，GEO 是让 AI 在回答里直接推荐你。</b><br>打个比方：SEO 相当于你在书店里容易被找到；GEO 是书店直接对你说"推荐这三本"。<br>技术上的差别是：GEO 要把你的企业信息做成 AI 能准确读懂和引用的结构。</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">家具建材类长尾词密集，效果最明显。有卫浴品牌靠结构化数据让产品页点击率涨了 215%，长尾词自然流量每月多 1.2 万次。</div></div>
+        <div class="row"><div class="lb">不能说什么</div><div class="tx"><span style="color:var(--red)">❌ 不承诺"一个月见效"——这类需求需1–2 轮内容优化才开始显现，显著成效 3–6 个月。<br>❌ 绝不做黑帽 GEO（批量造假信息）。央视 3·15 已曝光过，那是刑事风险。</span></div></div>
+      </div>
+    </div>
+
+    <!-- L4 -->
+    <div class="mod core">
+      <div class="top"><div class="id">L4</div><div>
+        <h4>AI 精准询盘 <span class="tag t-care">最锋利的一把刀</span></h4>
+        <div class="one">"你在阿里国际站买过询盘吧？一条有效询盘成本大概 1,400 到 4,000 元。我们按条计费，不合格的不要钱。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"怎么保证不是垃圾询盘？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">把<b>7 项标准</b>背下来，这是最能建立信任的话：<br>① 采购量（不是只问样品）② 产品范围（跟你主营匹配）③ 客户画像（企业规模行业对不对）④ 目标国家（在你的服务范围内）⑤ 沟通意愿（真的回复了内容）⑥ 真实性（联系方式公司信息可核验）⑦ 联系方式（能有效触达）<br><b>七条全部写进合同</b>——这样你才是"风险在卖家这边"，客户才敢签。</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">客户算得清：原本一条 2,000 元，现在 300–800 元，省 60–80%。<b>这个账他不需要相信你的服务，只需要算这道数学题。</b></div></div>
+        <div class="row"><div class="lb">⚠️ 口径提醒</div><div class="tx">服装、珠宝这类偏 B2C 的品类，客户不买"询盘"这个概念——要改成<b>"加购/留资"</b>去说，否则他听不懂。</div></div>
+      </div>
+    </div>
+
+    <!-- L5 -->
+    <div class="mod">
+      <div class="top"><div class="id">L5</div><div>
+        <h4>AI 客服与外贸业务员</h4>
+        <div class="one">"半夜三点非洲客户发来 WhatsApp 问价，你早上起来看到，人已经找下一家了。这个模块就是帮你有人接。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"真人都不用，还需要AI 吗？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">不是替代人，是<b>补上人顾不上的时间差</b>。欧美客户半夜询价、中东客户周末询价，这些原本就流失了。一个业务员最贵的不是工资，是没人盯着的时候漏掉的单。</div></div>
+        <div class="row"><div class="lb">行业差异</div><div class="tx">汽配建材：<b>效率型客服</b>——快速匹配、快速给价，速度就是竞争力<br>珠宝非遗：<b>讲故事型客服</b>——讲工艺、讲匠人。客单价高、决策慢，用催单话术会直接砸单</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">把"人不在就漏单"变成"人不在也在跟"。这是转化率最直接的提升。</div></div>
+      </div>
+    </div>
+
+    <!-- L6 -->
+    <div class="mod core">
+      <div class="top"><div class="id">L6</div><div>
+        <h4>行业数据结构引擎 <span class="tag t-care">最难被抄、你的核心武器</span></h4>
+        <div class="one">"你客户问'有没有适配 LC200 的前刹车片'，你现在是不是要人工翻适配表？我们的系统把这个表变成客户能自己查的页面，他查完自己就知道适配不适配。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"这个跟建站有什么区别？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">一句话讲清：<b>建站是让客户"看到"，引擎是让客户"自己算"。</b><br>普通代运营只会发内容，引擎会干活——而且是每个行业干不一样的活：<br>· 汽配：OE 号 + 车型 + 发动机 → 自动报价，5 秒出<br>· 家具橱柜：尺寸 + 材质 + 五金 → 客户自己勾选就出价<br>· 卫浴：规格 + 安装条件 → 自动选型报价<br>· 珠宝：材质 + 宝石 + 克重 → 自动定价<br>· 服装：尺码 + 面料 + 工艺 → 自动核价，守住毛利<br>· 非遗：匠人工时 + 文化附加值 → 溢价系数测算</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">三个层面：<b>① 客户体验</b>（不用等你回复）<b>② 你的成本</b>（客服不用反复答同一个问题）<b>③ 毛利</b>（服装橱柜这类能自动守住毛利底线）。<br><b>这是唯一别人抄不走的东西</b>——代运营公司会花很多年也做不出来，因为他们不懂这个行业的参数逻辑。</div></div>
+        <div class="row"><div class="lb">给客户的价值话术</div><div class="tx">"别人做的是让客户来问你；我们做的是让客户自己就能查到你。差别是你的客服能省下多少时间。"</div></div>
+      </div>
+    </div>
+
+    <!-- L7 -->
+    <div class="mod">
+      <div class="top"><div class="id">L7</div><div>
+        <h4>合规与认证</h4>
+        <div class="one">"很多客户货做得挺好，卡在认证上——进不了欧美市场。合规这块我们帮你把清单理清楚、找机构对接、做成客户能看的展示页。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"我之前没听说过这些认证，不知道要不要做。"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">按行业说，<b>你得记住这几条</b>：<br>· 家具：欧盟 EN 1727/EN 12520；美国 CPSIA。⚠️ 已有佛山家具厂因未标注 Cookie 使用政策被罚 8.4 万欧元<br>· 服装：欧盟 OEKO-TEX 100 强制，禁重金属和有害染料<br>· 卫浴：CE、饮用水标准<br>· 珠宝：SGS 检测报告、贵金属标记法规<br>· 非遗：传承人授权 + 涉外公证；红木紫檀等濒危木材要 CITES 许可证<br>· 全行业出口美国：UFLPA 供应链溯源</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">一句话：<b>合规是把"进不去的市场"变成"能进的市场"</b>。这是最容易算清价值的一块。</div></div>
+        <div class="row"><div class="lb">关键动作</div><div class="tx"><b>第三方检测费实报实销，一分不加。</b>这句话说出来，信任度立刻拉满——因为你主动放弃了那块差价。</div></div>
+      </div>
+    </div>
+
+    <!-- L8 -->
+    <div class="mod core">
+      <div class="top"><div class="id">L8</div><div>
+        <h4>政策补贴 <span class="tag t-care">客户最容易惊喜的一块</span></h4>
+        <div class="one">"我们先帮你算一笔账：你这家企业能拿哪些政策、什么时候截止、缺什么条件。算完再决定要不要往下走。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"我听说申请补贴很难，是不是都要找关系？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">先泼一盆冷水（这反而让你显得专业）：<br><b>政策是真的，但门槛也是真的。</b>有几个数字你必须记住：<br>· 高企认定：<b>税率 25% → 15%</b>，还有研发费用加计扣除<br>· 广州数字化转型奖补：<b>按投入 50%，最高 500 万</b>（二级≤60万/三级100-200万/四级150-500万）<br>· 佛山：按投入 30%，二级三级最高 50 万、四级最高 70 万<br>· 专精特新：广州在库 7,175 家，「小巨人」最高 100 万，单项冠军最高 150 万</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">这块最容易打动客户，因为它不是"帮你省钱"，是"<b>帮你拿到本来会错过的钱</b>"。<br>尤其是数字化转型奖补——有些客户完全不知道自己符合条件。</div></div>
+        <div class="row"><div class="lb">⛔ 绝不能说的话</div><div class="tx"><span style="color:var(--red)">❌ 不说"包过"——高企认定是省级专家评审，2025 年专精特新申报淘汰率已经83%。<br>❌ 不按补贴到账金额抽成——普遍 10–20% 抽成已被多地监管定性违规，机构涉骗补一律移送公安。<br>❌ 不碰材料造假——伪造租赁合同骗取补贴是诈骗罪，已有企业负责人被判有期徒刑一年缓一年六个月。</span></div></div>
+        <div class="row"><div class="lb">正确说法</div><div class="tx">"<b>先评估，不适合申报我如实告诉您，不接您的单。</b>"<br>这句话短期少一单，长期换来的是转介绍和口碑。</div></div>
+      </div>
+    </div>
+
+    <!-- L9 -->
+    <div class="mod">
+      <div class="top"><div class="id">L9</div><div>
+        <h4>陪跑与培训</h4>
+        <div class="one">"很多企业不是没钱，是团队不会用。我们按产业带办小班沙龙，一下来十几个同行老板一起聊，一次能聊出真问题。"</div>
+      </div></div>
+      <div class="bd">
+        <div class="row"><div class="lb">客户会问</div><div class="tx">"我学不会怎么办？"</div></div>
+        <div class="row"><div class="lb">说清楚</div><div class="tx">沙龙按产业带来办：番禺服装珠宝专场、花都皮具专场、佛山泛家居专场。<b>同产业带的老板聚在一起，一次能触达十几家潜在客户</b>，比你一个个拜访效率高得多，而且聊的是真问题不是套话。</div></div>
+        <div class="row"><div class="lb">真正价值</div><div class="tx">这是你<b>冷启动阶段最关键的现金流</b>，也是最好的口碑产品——3,800 元的诊断包是所有年框订单的入口。</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section>
+  <div class="s-num">03 / 症状 → 处方对照表</div>
+  <h2>客户说什么，你就开什么药</h2>
+  <p class="s-lead">这是最实用的一张表。客户描述的每个痛点都对应一个模块，你照着走就行，不用临场想。</p>
+
+  <table>
+    <thead><tr><th style="width:250px">客户原话</th><th>背后真正的问题</th><th style="width:132px">主推模块</th><th style="width:88px">优先级</th></tr></thead>
+    <tbody>
+      <tr><td>"阿里国际站询盘越来越贵"</td><td>流量成本高、询盘质量差、客户被平台绑死</td><td><b>L4</b> AI 精准询盘</td><td><span class="tag t-yes">第一刀</span></td></tr>
+      <tr class="alt"><td>"业务员走了客户就走了"</td><td>客户资产没有沉淀在系统里，全绑在个人身上</td><td><b>L5</b> AI 客服 + <b>L6</b> 引擎</td><td><span class="tag t-yes">第一刀</span></td></tr>
+      <tr><td>"客户半夜发 WhatsApp，我早上才看到"</td><td>时间差导致流失，没人接夜间询盘</td><td><b>L5</b> AI 外贸业务员</td><td><span class="tag t-yes">立竿见影</span></td></tr>
+      <tr class="alt"><td>"产品挂上去了，客户一直问适配问题"</td><td>适配数据没有结构化，人工重复回答</td><td><b>L6</b> 行业数据结构引擎</td><td><span class="tag t-yes">核心差异</span></td></tr>
+      <tr><td>"中文机翻的英文，客户看不懂"</td><td>专业术语、单位、公差翻译错位</td><td><b>L2</b> 内容工厂 + <b>L1</b> 多语言站</td><td><span class="tag t-care">基础项</span></td></tr>
+      <tr class="alt"><td>"同行都在做 AI 搜索，我们还没动"</td><td>品牌在 AI 答案里查无此人</td><td><b>L3</b> GEO</td><td><span class="tag t-care">差异化</span></td></tr>
+      <tr><td>"产品进不了欧美市场，卡在认证"</td><td>合规壁垒挡住了市场</td><td><b>L7</b> 合规与认证</td><td><span class="tag t-yes">最易算清价值</span></td></tr>
+      <tr class="alt"><td>"我知道有补贴，但不知道能不能拿"</td><td>信息差导致错过申报窗口</td><td><b>L8</b> 政策补贴</td><td><span class="tag t-yes">最易成交</span></td></tr>
+      <tr><td>"做了很多年亚马逊，想开品牌独立站"</td><td>有销量没品牌，客户数据在平台手里</td><td><b>L1</b> 独立站 + <b>L3</b> GEO</td><td><span class="tag t-care">升级需求</span></td></tr>
+      <tr class="alt"><td>"网站做了两年了，没人问过"</td><td>只是建站，没做内容、没做流量、没进 AI</td><td><b>L2</b> + <b>L3</b> + <b>L4</b> 全套</td><td><span class="tag t-care">需先诊断</span></td></tr>
+      <tr><td>"同行卖得比我还便宜"</td><td>纯价格竞争，缺乏信任与内容层面的差异化</td><td><b>L6</b> 引擎 + <b>L7</b> 合规（建立信任壁垒）</td><td><span class="tag t-care">需要引导</span></td></tr>
+      <tr class="alt"><td>"想先看看效果，不想一次签一年"</td><td>对新公司不信任</td><td><b>L8</b> 诊断包 2,980 →可抵服务费</td><td><span class="tag t-yes">最佳入口</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="hl">
+    <b>用法</b>　客户说什么，你就在表里找那一行，<b>只讲这一行对应的模块</b>。不要一次把十个模块都倒出来——客户听不完，也记不住。<br>
+    如果客户说了三个问题，选<b>最容易见效的那个先开</b>，做出来了他才信你，后面两个才好卖。
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section>
+  <div class="s-num">04 / 案例与数据支撑</div>
+  <h2>客户要证据时，你手里有什么</h2>
+  <p class="s-lead">客户说"有没有别人做过"的时候，最怕你含糊。以下都是<strong>公开可查的数据或政策原文</strong>，你可以说，但要注意区分哪些是"我做的"、哪些是"行业里的"。</p>
+
+  <table>
+    <thead><tr><th style="width:190px">能支撑什么</th><th>内容</th><th style="width:100px">怎么说是</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>AI 能降询盘成本</b></td>
+        <td>传统 B2B 平台单条有效询盘成本约 <b>1,400–4,000 元</b>；AI 打法可降到 <b>200–1,200 元/条</b>，降幅 70–90%。已有 AI 外贸服务商按"合格询盘"计费，服务 300+ 外贸企业</td>
+        <td><span class="tag t-care">行业数据</span></td>
+      </tr>
+      <tr class="alt">
+        <td><b>广州汽配企业真实获客案例</b></td>
+        <td>某广州汽配企业参加行业展会前 14 天启动 Meta 精准广告 + 内容营销：<b>11 天获取 195+ 条海外询盘</b>，其中经销商到展沟通，最终<b>成交 20 万+ 订单</b>，后续持续开发非洲、俄罗斯市场</td>
+        <td><span class="tag t-care">同行业案例<br>不说"是我们的"</span></td>
+      </tr>
+      <tr>
+        <td><b>卫浴 / 建材类 GEO 效果</b></td>
+        <td>某卫浴品牌通过结构化数据标记，使产品页点击率提升 <b>215%</b>，关键词"industrial faucet"自然流量月均增长 <b>1.2 万次</b></td>
+        <td><span class="tag t-care">行业数据</span></td>
+      </tr>
+      <tr class="alt">
+        <td><b>SaaS 建站优于定制开发</b></td>
+        <td>某年营收 80 万的家居厂，原计划 8 万定制站 + 每年 2 万维护费，上线后 90% 功能闲置（分销、直播均无对应资源）；切换 SaaS 后年费不到 3,000 元，<b>询盘量反而提升 12%</b></td>
+        <td><span class="tag t-yes">可以讲给客户听</span></td>
+      </tr>
+      <tr>
+        <td><b>合规风险是真实存在的</b></td>
+        <td>某佛山家具厂未标注 Cookie 使用政策，<b>被 GDPR 处罚 8.4 万欧元</b>；某汽配商用香港服务器欧美访问延迟 387ms，跳出率 53%，改用东京节点后降至 29%</td>
+        <td><span class="tag t-yes">反向案例，讲合规必要性</span></td>
+      </tr>
+      <tr class="alt">
+        <td><b>珠宝信任建设怎么做</b></td>
+        <td>独立站珠宝类平均客单 <b>$287</b>，是平台同类的 1.6 倍；TikTok Shop 头部银饰品牌退货率超 34%，主因是尺寸误判与材质描述偏差。有效做法：首页三秒内展示第三方认证徽章 + 材质特写 + 尺码实测视频</td>
+        <td><span class="tag t-care">行业数据<br>用来讲逻辑</span></td>
+      </tr>
+      <tr>
+        <td><b>政策金额（最有杀伤力）</b></td>
+        <td>广州市：专精特新「小巨人」最高 100 万、国家级单项冠军最高 150 万；数字化转型按投入 <b>50%</b> 补助，<b>最高 500 万</b>。佛山市：按投入 30%，二级/三级最高 50 万、四级最高 70 万</td>
+        <td><span class="tag t-yes">政策原文，可直接引用</span></td>
+      </tr>
+      <tr class="alt">
+        <td><b>非遗是高利润赛道</b></td>
+        <td>2025 年非遗类工艺美术及文创产品出口 <b>482.3 亿美元</b>（同比 +5.2%），手工非遗文创出口利润率 <b>12%–25%</b>，明显高于普通工业品，退税 13%</td>
+        <td><span class="tag t-care">行业数据</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="redbox">
+    <b>⛔关于案例，三条铁律</b><br>
+    ① <b>不要把行业案例说成自己的客户案例。</b>可以说"广州有家汽配企业这样做，效果是……"，<b>不能说"我们有个客户……"</b>。被追问一句"叫什么公司"就穿帮了。<br>
+    ② <b>没有真客户之前，你的第一个案例就是自己。</b>用你自己的汽配业务跑一遍，把真实数据整理出来——这比借来的案例有力得多。<br>
+    ③ <b>数字要保守。</b>说"11 天 195 条询盘"不如说"有客户 11 天拿到近 200 条询盘"。留有余地，显得诚实。
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section>
+  <div class="s-num">05 / 报价怎么说</div>
+  <h2>报价不是报数字，是给方案</h2>
+  <p class="s-lead">客户听到数字的第一反应是"贵不贵"，但他没算过账。报价的正确顺序是：<b>先讲客户能得到什么 → 再报数字 → 最后帮他算这笔账合不合算。</b></p>
+
+  <h3>三档套餐怎么介绍</h3>
+  <table>
+    <thead><tr><th style="width:130px">套餐</th><th>什么时候推</th><th style="width:130px">价格</th><th style="width:150px">客户拿到的</th></tr></thead>
+    <tbody>
+      <tr><td><b>行业体检包</b><br><span style="font-size:11.5px;color:var(--sub)">入口</span></td>
+      <td><b>任何时候都可以推，尤其是第一次见面。</b>降低决策门槛：不用先签一年，先花 2,980 把账算清。而且这笔钱后面可以抵服务费，等于白送一次咨询。</td>
+      <td class="k">2,980 元</td><td>《出海可行性报告》+《政策红利地图》+竞品对标 + 90 天动作清单</td></tr>
+      <tr class="alt"><td><b>出海启航包</b><br><span style="font-size:11.5px;color:var(--sub)">B2B 行业</span></td>
+      <td>汽配、建材、卫浴这类 B2B 为主的行业。核心诉求是先把基础打通、把询盘做起来。</td>
+      <td class="k">6.8–8.8 万/年</td><td>独立站 + 内容社媒 + GEO + AI 业务员。首年能看到基建落地</td></tr>
+      <tr><td><b>品牌出海包</b><br><span style="font-size:11.5px;color:var(--sub)">B2C 行业</span></td>
+      <td>珠宝、家具、服装、非遗这类高客单价、重信任的品类。他们不缺产能，缺的是让客户敢下单的理由。</td>
+      <td class="k">12.8–25 万/年</td><td>定制站 + 强化内容 + 合规认证 + 信任体系</td></tr>
+    </tbody>
+  </table>
+
+  <div class="hl">
+    <b>帮他算账，而不是报数字</b><br>
+    出海启航包 6.8 万/年，对应客户一年 3000 万出口额，等于每月 5,700 元。<br>
+    <b>你可以这样问</b>："您现在一年在阿里国际站上花多少？一条有效询盘 1,400 到 4,000 元，对吧？我们这套是让询盘变多、变准，同时把询盘变成自己的客户数据。<b>您算算，一个老客户如果每年复购三次，值多少钱？</b>"<br>
+    把话题引到"一个客户值多少钱"，客户自己就完成了价格锚定。
+  </div>
+
+  <h3>客户嫌贵时，三种应对</h3>
+  <table>
+    <thead><tr><th style="width:170px">客户说</th><th>不要这样答</th><th>试试这样说</th></tr></thead>
+    <tbody>
+      <tr><td>"太贵了"</td><td>"我们已经很便宜了"</td><td>"理解。那我们先不谈年费——您觉得哪一块最值？<b>如果是询盘这块，我们可以先只做这一块，按效果来</b>。"（退回单项服务）</td></tr>
+      <tr class="alt"><td>"我再想想"</td><td>"那您考虑好联系我"（放弃）</td><td>"应该的，这么大的决定确实要想想。<b>那我先给您做一份诊断，不收钱</b>，您拿着报告内部讨论。等您想清楚了，我们再谈。"</td></tr>
+      <tr><td>"能便宜点吗"</td><td>"已经是最低价了"</td><td>"价格我可能降不了，<b>但我可以换交付方式</b>。比如第一年先做核心的两块，剩下第二年再加。这样您风险也小。"</td></tr>
+      <tr class="alt"><td>"你们有什么案例"</td><td>"我们有很多成功案例"（含糊）</td><td>"广州有家汽配企业，展会前 14 天启动投放，<b>11 天拿到近 200 条询盘</b>，成交了 20 多万。<b>我们的方法是从他们这个案例里打磨出来的</b>。"</td></tr>
+      <tr><td>"我再问问别家"</td><td>"随你"（赌气）</td><td>"应该的，多比几家心里有底。<b>我建议您重点问他们两个问题：一是询盘不合格怎么算账，二是政策申报怎么保证不退费。</b>这两条问完，您大概就知道谁在认真做事。"</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 06 ============ -->
+<section>
+  <div class="s-num">06 / 第一次见客户</div>
+  <h2>30 分钟怎么走</h2>
+  <p class="s-lead">别小看这半小时。这是唯一一个"零压力"的接触点——他不需要决定任何事，只是聊聊。所以这一场唯一的目标是：<b>让他觉得你懂行，并且愿意再来一次。</b></p>
+
+  <div class="flow">
+    <div class="f">
+      <div class="m">第 1–5 分钟</div>
+      <h4>只问，不介绍</h4>
+      <p>问三件事：主要做什么品类？主要市场是哪几个？现在最头疼的是什么？</p>
+      <div class="goal">目标：拿到痛点原话</div>
+    </div>
+    <div class="f">
+      <div class="m">第 6–12 分钟</div>
+      <h4>讲他的问题</h4>
+      <p>用他的原话复述，然后说这类问题通常怎么解决。<b>不出现任何产品名。</b></p>
+      <div class="goal">目标：确认你听懂了他</div>
+    </div>
+    <div class="f">
+      <div class="m">第 13–20 分钟</div>
+      <h4>给一个行业案例</h4>
+      <p>讲一个同行业的（不是自己的），然后问他"你们现在的情况跟这个像不像"。</p>
+      <div class="goal">目标：建立可信度</div>
+    </div>
+    <div class="f">
+      <div class="m">第 21–26 分钟</div>
+      <h4>给一个动作</h4>
+      <p>不说"我们能做什么"，说"<b>您可以先做一件事</b>"——比如先去做政策体检，或者先查一下适配数据。</p>
+      <div class="goal">目标：留下下一步</div>
+    </div>
+    <div class="f">
+      <div class="m">第 27–30 分钟</div>
+      <h4>留联系</h4>
+      <p>加微信，把诊断报告的模板发给他。<b>结束。</b></p>
+      <div class="goal">目标：48 小时内有第二次接触</div>
+    </div>
+  </div>
+
+  <h3>四个可以直接抄的问题</h3>
+  <div class="script">
+    <div class="stage">开场 · 破冰</div>
+    <div class="say">"王总，我今天不推销，就想了解一下您现在出口这块最头疼的是什么。<b>您说完，我看看我能不能帮上忙，帮不上我就直说。</b>"</div>
+    <div class="note">最后一句是重点。主动给对方"拒绝你"的许可，反而降低戒备。</div>
+  </div>
+
+  <div class="script">
+    <div class="stage">诊断 · 挖痛点</div>
+    <div class="say">"您现在阿里国际站一个月大概多少询盘？<b>这些询盘里面，大概有多少是您觉得靠谱的？</b>"</div>
+    <div class="note">第二个问题才是关键。客户答"三成"或"两成"的时候，你就有了往下推的理由。</div>
+  </div>
+
+  <div class="script">
+    <div class="stage">转移 · 从问题到政策</div>
+    <div class="say">"我先问一个跟产品无关的问题——<b>您公司做过高新技术企业认定吗？数字化改造申请过补贴吗？</b>"</div>
+    <div class="note">这一问往往能打开客户最意外的话题。很多老板完全不知道自己符合条件。</div>
+  </div>
+
+  <div class="script green">
+    <div class="stage">收尾 · 留下一步</div>
+    <div class="say">"王总，今天聊的我回去整理一份东西给您，<b>不收费</b>。里面有一份政策盘点，看您企业能拿哪些、缺什么条件、什么时候截止。您拿去内部看一下，如果有用咱们再聊下一步。"</div>
+    <div class="note">这一步是整场最关键的动作。<b>免费给的东西，一定会带来第二次联系。</b></div>
+  </div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section>
+  <div class="s-num">07 / 红线</div>
+  <h2>三句绝对不能说的话</h2>
+  <p class="s-lead">这些不是技巧问题，是法律和信任问题。一次说错，可能不是丢一单，是进黑名单。</p>
+
+  <div class="cards three">
+    <div class="c red">
+      <div class="em">🚫</div>
+      <h4>不说"包过"</h4>
+      <p>高企认定是省级组织专家评审，2025 年专精特新申报淘汰率已经 83%。说包过，一旦没过就是欺诈纠纷。</p>
+      <div class="say">✅ 正确说法："<b>我们做的是把您的情况做到最有可能通过，不适合的企业我会劝退不接。</b>"</div>
+    </div>
+    <div class="c red">
+      <div class="em">🚫</div>
+      <h4>不按补贴抽成</h4>
+      <p>普遍 10–20% 的抽成已被多地监管定性违规，机构涉骗补一律移送公安。这是创始人个人要担的风险。</p>
+      <div class="say">✅ 正确说法："<b>我们收固定服务费，第三方审计费实报实销、一分不加。</b>"</div>
+    </div>
+    <div class="c red">
+      <div class="em">🚫</div>
+      <h4>不碰材料造假</h4>
+      <p>伪造租赁合同虚增经营时长骗取补贴，构成诈骗罪。已有企业负责人被判有期徒刑一年缓一年六个月、罚金 5,000 元。</p>
+      <div class="say">✅ 正确做法："<b>客户要是有造假的想法，我当场终止合作。</b>"</div>
+    </div>
+  </div>
+
+  <div class="redbox">
+    <b>还有一句容易踩的</b>：客户问你"你这个跟别人比怎么样"，<b>不要贬低同行</b>。说"我们更擅长行业的参数结构化"就够了。攻击同行，短期显得自己专业，长期会毁掉口碑，而且你并不知道他们的底细。
+  </div>
+
+  <div class="greenbox">
+    <b>反过来，这三句要主动说</b>（客户听到会觉得你跟别人不一样）：<br>
+    · "<b>第三方检测费我一分钱不加</b>"——你主动放弃了那块差价<br>
+    · "<b>询盘不合格不计费</b>"——你承担了质量风险<br>
+    · "<b>资质认定不通过全额退款</b>"——风险在你这边
+  </div>
+</section>
+
+<footer>
+<b>使用说明</b>　这份手册的用途是：<b>见客户之前过一遍，把"症状→处方"那张表看熟</b>。十个模块的解释不用背，客户问到再翻。<br><br>
+<b>案例使用纪律</b>　所有案例均为公开可查的行业数据或政策原文。<b>不得将行业案例表述为自己公司的客户案例</b>。你的第一个真实案例应该来自你自己业务的实跑数据。<br><br>
+<b>最需要练的一件事</b>　第 06 章那四个问题，以及最后那句收尾话术。<b>其他都可以临场调整，那四句话必须像条件反射一样说出来。</b>
+</footer>
+
+</div>
+</body>
+</html>
